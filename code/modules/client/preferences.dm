@@ -507,7 +507,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			continue
 		// Start WoD13 Modification
 		// It's useful to not have this for rare uses of species DNA, but not for our purposes
-		if (!preference.is_accessible(src))
+		// Checks for /client to exclude /datum/client_interface
+		if (istype(parent, /client) && !preference.is_accessible(src))
 			continue
 		// End WoD13 Modification
 
