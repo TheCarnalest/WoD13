@@ -1,7 +1,7 @@
 /mob/living/carbon/human/npc/bubway
 	staying = TRUE
 
-/mob/living/carbon/human/npc/bubway/Initialize()
+/mob/living/carbon/human/npc/bubway/Initialize(mapload)
 	. = ..()
 
 	if (prob(66))

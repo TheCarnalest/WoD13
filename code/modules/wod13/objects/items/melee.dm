@@ -5,7 +5,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	var/quieted = FALSE
 
-/obj/item/melee/vampirearms/Initialize()
+/obj/item/melee/vampirearms/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 25, "melee", FALSE)
 
@@ -33,12 +33,12 @@
 	masquerade_violating = FALSE
 	var/wielded = FALSE
 
-/obj/item/melee/vampirearms/fireaxe/Initialize()
+/obj/item/melee/vampirearms/fireaxe/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/melee/vampirearms/fireaxe/ComponentInitialize()
+/obj/item/melee/vampirearms/fireaxe/ComponentInitialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound)
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=70, icon_wielded="fireaxe1")
@@ -88,7 +88,7 @@
 	masquerade_violating = FALSE
 	is_iron = TRUE
 
-/obj/item/melee/vampirearms/katana/Initialize()
+/obj/item/melee/vampirearms/katana/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 250, "katana", FALSE)
 
@@ -101,7 +101,7 @@
 	masquerade_violating = TRUE
 
 //Do not sell the magically summoned katanas for infinite cash
-/obj/item/melee/vampirearms/katana/fire/Initialize()
+/obj/item/melee/vampirearms/katana/fire/Initialize(mapload)
 	. = ..()
 	var/datum/component/selling/sell_component = GetComponent(/datum/component/selling)
 	if(sell_component)
@@ -121,7 +121,7 @@
 	is_iron = FALSE
 	masquerade_violating = TRUE
 
-/obj/item/melee/vampirearms/katana/blood/Initialize()
+/obj/item/melee/vampirearms/katana/blood/Initialize(mapload)
 	. = ..()
 	var/datum/component/selling/sell_component = GetComponent(/datum/component/selling)
 	if(sell_component)
@@ -154,7 +154,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	is_iron = TRUE
 
-/obj/item/melee/vampirearms/rapier/Initialize()
+/obj/item/melee/vampirearms/rapier/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 800, "rapier", FALSE)
 
@@ -180,7 +180,7 @@
 	resistance_flags = FIRE_PROOF
 	masquerade_violating = FALSE
 
-/obj/item/melee/vampirearms/machete/Initialize()
+/obj/item/melee/vampirearms/machete/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 150, "machete", FALSE)
 
@@ -205,7 +205,7 @@
 	masquerade_violating = FALSE
 	is_iron = TRUE
 
-/obj/item/melee/vampirearms/sabre/Initialize()
+/obj/item/melee/vampirearms/sabre/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 1000, "sabre", FALSE)
 
@@ -230,7 +230,7 @@
 	masquerade_violating = FALSE
 	is_iron = TRUE
 
-/obj/item/melee/vampirearms/longsword/Initialize()
+/obj/item/melee/vampirearms/longsword/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 1800, "longsword", FALSE)
 
@@ -262,7 +262,7 @@
 	icon_state = "sabre_sheathe-1"
 	worn_icon_state = "sabre_sheathe"
 
-/obj/item/storage/belt/vampire/sheathe/ComponentInitialize()
+/obj/item/storage/belt/vampire/sheathe/ComponentInitialize(mapload)
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -346,7 +346,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	is_wood = TRUE
 
-/obj/item/melee/vampirearms/baseball/Initialize()
+/obj/item/melee/vampirearms/baseball/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 50, "baseball", FALSE)
 
@@ -478,7 +478,7 @@
 			L.toggle_resting()
 	return ..()
 
-/obj/item/melee/vampirearms/knife/gangrel/Initialize()
+/obj/item/melee/vampirearms/knife/gangrel/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
@@ -506,12 +506,12 @@
 	var/on = FALSE
 	var/wielded = FALSE
 
-/obj/item/melee/vampirearms/chainsaw/Initialize()
+/obj/item/melee/vampirearms/chainsaw/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/melee/vampirearms/chainsaw/ComponentInitialize()
+/obj/item/melee/vampirearms/chainsaw/ComponentInitialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
@@ -668,12 +668,12 @@
 		if(result == "4")
 			playsound(loc, 'code/modules/wod13/sounds/solo4.ogg', 100, FALSE)
 
-/obj/item/melee/vampirearms/eguitar/Initialize()
+/obj/item/melee/vampirearms/eguitar/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/melee/vampirearms/eguitar/ComponentInitialize()
+/obj/item/melee/vampirearms/eguitar/ComponentInitialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=40, force_wielded=10, icon_wielded="rock1")
 

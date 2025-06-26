@@ -2,7 +2,7 @@
 	max_stat = 3
 	my_backup_weapon_type = /obj/item/melee/vampirearms/knife
 
-/mob/living/carbon/human/npc/bandit/Initialize()
+/mob/living/carbon/human/npc/bandit/Initialize(mapload)
 	. = ..()
 
 	if (prob(50))

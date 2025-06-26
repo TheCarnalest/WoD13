@@ -21,11 +21,11 @@
 
 
 //registers bouncer with the perms
-/datum/vip_barrier_perm/proc/add_bouncer(var/target_bouncer)
+/datum/vip_barrier_perm/proc/add_bouncer(target_bouncer)
 	linked_bouncers += target_bouncer
 
 //registers barrier with the perms
-/datum/vip_barrier_perm/proc/add_barrier(var/target_barrier)
+/datum/vip_barrier_perm/proc/add_barrier(target_barrier)
 	linked_barriers += target_barrier
 	RegisterSignal(target_barrier, COMSIG_BARRIER_NOTIFY_GUARD_BLOCKED, PROC_REF(notify_guard_blocked))
 	RegisterSignal(target_barrier, COMSIG_BARRIER_NOTIFY_GUARD_ENTRY, PROC_REF(notify_guard_entry))

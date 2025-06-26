@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(carpool)
 
 /obj/item/gas_can/rand
 
-/obj/item/gas_can/rand/Initialize()
+/obj/item/gas_can/rand/Initialize(mapload)
 	. = ..()
 	stored_gasoline = rand(0, 500)
 
@@ -137,7 +137,7 @@ SUBSYSTEM_DEF(carpool)
 
 	var/gas = 1000
 
-/obj/vampire_car/ComponentInitialize()
+/obj/vampire_car/ComponentInitialize(mapload)
 	. = ..()
 	AddComponent(component_type)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -331,7 +331,7 @@ SUBSYSTEM_DEF(carpool)
 		for(var/mob/living/rider in src)
 			. += "<span class='notice'>* [rider]</span>"
 
-/obj/vampire_car/proc/get_damage(var/cost)
+/obj/vampire_car/proc/get_damage(cost)
 	if(cost > 0)
 		health = max(0, health-cost)
 	if(cost < 0)
@@ -615,7 +615,7 @@ SUBSYSTEM_DEF(carpool)
 /obj/vampire_car/retro/rand
 	icon_state = "3"
 
-/obj/vampire_car/retro/rand/Initialize()
+/obj/vampire_car/retro/rand/Initialize(mapload)
 	icon_state = "[pick(1, 3, 5)]"
 	if(access == "none")
 		access = "npc[rand(1, 20)]"
@@ -625,7 +625,7 @@ SUBSYSTEM_DEF(carpool)
 	icon_state = "4"
 	dir = WEST
 
-/obj/vampire_car/rand/Initialize()
+/obj/vampire_car/rand/Initialize(mapload)
 	icon_state = "[pick(2, 4, 6)]"
 	if(access == "none")
 		access = "npc[rand(1, 20)]"
@@ -722,7 +722,7 @@ SUBSYSTEM_DEF(carpool)
 	baggage_max = WEIGHT_CLASS_BULKY
 	component_type = /datum/component/storage/concrete/vtm/car/track
 
-/obj/vampire_car/track/Initialize()
+/obj/vampire_car/track/Initialize(mapload)
 	if(access == "none")
 		access = "npc[rand(1, 20)]"
 	..()
@@ -736,7 +736,7 @@ SUBSYSTEM_DEF(carpool)
 	access = "clinic"
 	baggage_limit = 60
 
-/proc/get_dist_in_pixels(var/pixel_starts_x, var/pixel_starts_y, var/pixel_ends_x, var/pixel_ends_y)
+/proc/get_dist_in_pixels(pixel_starts_x, pixel_starts_y, pixel_ends_x, pixel_ends_y)
 	var/total_x = abs(pixel_starts_x-pixel_ends_x)
 	var/total_y = abs(pixel_starts_y-pixel_ends_y)
 	return round(sqrt(total_x*total_x + total_y*total_y))
@@ -752,7 +752,7 @@ SUBSYSTEM_DEF(carpool)
 	else if(dx < 0)
 		. += 360
 
-/proc/get_angle_diff(var/angle_a, var/angle_b)
+/proc/get_angle_diff(angle_a, angle_b)
 	return ((angle_b - angle_a) + 180) % 360 - 180;
 
 /obj/vampire_car
@@ -762,7 +762,7 @@ SUBSYSTEM_DEF(carpool)
 	var/impact_delay = 0
 	glide_size = 96
 
-/obj/vampire_car/Initialize()
+/obj/vampire_car/Initialize(mapload)
 	. = ..()
 	Fari = new (src)
 	Fari.icon = 'icons/effects/light_overlays/light_cone_car.dmi'
@@ -794,12 +794,12 @@ SUBSYSTEM_DEF(carpool)
 /turf
 	var/list/unpassable = list()
 
-/turf/Initialize()
+/turf/Initialize(mapload)
 	. = ..()
 	if(density)
 		unpassable += src
 
-/atom/movable/Initialize()
+/atom/movable/Initialize(mapload)
 	. = ..()
 	if(density && !isitem(src))
 		if(isturf(get_turf(src)))
@@ -989,7 +989,7 @@ SUBSYSTEM_DEF(carpool)
 		if(WEST)
 			controlling(0, -turn_speed)
 
-/obj/vampire_car/proc/controlling(var/adjusting_speed, var/adjusting_turn)
+/obj/vampire_car/proc/controlling(adjusting_speed, adjusting_turn)
 	var/drift = 1
 	if(driver)
 		if(HAS_TRAIT(driver, TRAIT_EXP_DRIVER))

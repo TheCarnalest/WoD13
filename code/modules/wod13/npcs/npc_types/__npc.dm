@@ -74,7 +74,7 @@
 
 	var/list/drop_on_death_list = null
 
-/mob/living/carbon/human/npc/LateInitialize()
+/mob/living/carbon/human/npc/LateInitialize(mapload)
 	. = ..()
 	if(role_weapons_chances.Find(type))
 		for(var/weapon in role_weapons_chances[type])
@@ -126,11 +126,11 @@
 /datum/movespeed_modifier/npc
 	multiplicative_slowdown = 2
 
-/mob/living/carbon/human/npc/proc/GetSayDelay(var/message)
+/mob/living/carbon/human/npc/proc/GetSayDelay(message)
 	var/delay = length_char(message)
 	return delay
 
-/mob/living/carbon/human/npc/proc/RealisticSay(var/message)
+/mob/living/carbon/human/npc/proc/RealisticSay(message)
 	walk(src,0)
 	if(!message)
 		return
@@ -151,7 +151,7 @@
 				say(message)
 				is_talking = FALSE
 
-/mob/living/carbon/human/npc/proc/Annoy(var/atom/source)
+/mob/living/carbon/human/npc/proc/Annoy(atom/source)
 	walk(src,0)
 	if(CheckMove())
 		return

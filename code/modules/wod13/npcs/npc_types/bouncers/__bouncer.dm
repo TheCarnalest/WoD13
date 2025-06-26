@@ -35,7 +35,7 @@
 	//Behavior settings
 	fights_anyway=TRUE
 
-/mob/living/carbon/human/npc/bouncer/Initialize()
+/mob/living/carbon/human/npc/bouncer/Initialize(mapload)
 	.=..()
 
 	if(src.type == /mob/living/carbon/human/npc/bouncer)

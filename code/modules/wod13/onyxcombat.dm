@@ -379,7 +379,7 @@
 	var/obj/overlay/level4
 	var/obj/overlay/level5
 
-/atom/movable/screen/disciplines/Initialize()
+/atom/movable/screen/disciplines/Initialize(mapload)
 	. = ..()
 	level2 = new(src)
 	level2.icon = 'code/modules/wod13/disciplines.dmi'
@@ -496,7 +496,7 @@
 
 	..()
 
-/mob/living/Initialize()
+/mob/living/Initialize(mapload)
 	. = ..()
 	gnosis = new(src)
 	gnosis.icon = 'code/modules/wod13/48x48.dmi'

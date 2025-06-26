@@ -82,7 +82,7 @@
 	update_weed_icon()
 	return
 
-/obj/structure/weedshit/Initialize()
+/obj/structure/weedshit/Initialize(mapload)
 	. = ..()
 	GLOB.weed_list += src
 

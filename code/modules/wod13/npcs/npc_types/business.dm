@@ -1,7 +1,7 @@
 /mob/living/carbon/human/npc/business
 	bloodquality = BLOOD_QUALITY_HIGH
 
-/mob/living/carbon/human/npc/business/Initialize()
+/mob/living/carbon/human/npc/business/Initialize(mapload)
 	. = ..()
 
 	if (prob(66))

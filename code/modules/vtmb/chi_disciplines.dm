@@ -230,7 +230,7 @@
 	attack_verb_continuous = "splashes"
 	attack_verb_simple = "splash"
 
-/mob/living/simple_animal/hostile/bloodcrawler/kuei_jin/Initialize()
+/mob/living/simple_animal/hostile/bloodcrawler/kuei_jin/Initialize(mapload)
 	. = ..()
 	icon_state = "floor[rand(1, 7)]"
 	icon_living = "floor[rand(1, 7)]"
@@ -392,7 +392,7 @@
 	item_flags = DROPDEL
 	alpha = 0
 
-/obj/item/melee/powerfist/stone/Initialize()
+/obj/item/melee/powerfist/stone/Initialize(mapload)
 	. = ..()
 	tank = new /obj/item/tank/internals/oxygen/stone_shintai()
 
@@ -687,7 +687,7 @@
 	name = "Appearance Projector"
 	item_flags = DROPDEL
 
-//obj/item/chameleon/temp/Initialize()
+//obj/item/chameleon/temp/Initialize(mapload)
 //	. = ..()
 //	ADD_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 
@@ -1099,7 +1099,7 @@
 	layer = CURSE_LAYER
 	plane = FULLSCREEN_PLANE
 
-/atom/movable/screen/fullscreen/yomi_world/Initialize()
+/atom/movable/screen/fullscreen/yomi_world/Initialize(mapload)
 	. = ..()
 	dir = pick(NORTH, EAST, WEST, SOUTH, SOUTHEAST, SOUTHWEST, NORTHEAST, NORTHWEST)
 

@@ -180,7 +180,7 @@ SUBSYSTEM_DEF(cityweather)
 	pixel_w = -96
 	pixel_z = -96
 
-/obj/effect/realistic_fog/Initialize()
+/obj/effect/realistic_fog/Initialize(mapload)
 	. = ..()
 	animate(src, pixel_x = rand(-96, 96), pixel_y = rand(-96, 96), alpha = rand(5, 21), transform = matrix()*rand(1, 3), transform = turn(matrix(), rand(0, 360)), time = rand(100, 200), loop = -1)
 	animate(transform = null, pixel_x = 0, pixel_y = 0, alpha = rand(5, 21), time = rand(100, 200))
@@ -197,7 +197,7 @@ SUBSYSTEM_DEF(cityweather)
 	pixel_w = -16
 	pixel_z = -32
 
-/obj/effect/new_rain/Initialize()
+/obj/effect/new_rain/Initialize(mapload)
 	. = ..()
 	icon_state = "rain[rand(1, 15)]"
 	var/matrix/M = new
@@ -221,7 +221,7 @@ SUBSYSTEM_DEF(cityweather)
 	mouse_opacity = 0
 	pixel_w = -16
 
-/obj/effect/new_snow/Initialize()
+/obj/effect/new_snow/Initialize(mapload)
 	. = ..()
 	icon_state = "snow[rand(1, 15)]"
 	animate(src, alpha = 128, time = 30)
@@ -233,11 +233,11 @@ SUBSYSTEM_DEF(cityweather)
 	density = FALSE
 	mouse_opacity = 0
 
-/obj/effect/vamp_weather/Initialize()
+/obj/effect/vamp_weather/Initialize(mapload)
 	. = ..()
 	GLOB.rain_suka += src
 
-/turf/open/Initialize()
+/turf/open/Initialize(mapload)
 	. = ..()
 	if(istype(get_area(src), /area/vtm))
 		var/area/vtm/V = get_area(src)

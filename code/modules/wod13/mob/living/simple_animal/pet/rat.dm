@@ -28,7 +28,7 @@
 	maxHealth = 5
 	health = 5
 
-/mob/living/simple_animal/pet/rat/Initialize()
+/mob/living/simple_animal/pet/rat/Initialize(mapload)
 	. = ..()
 	pixel_w = rand(-8, 8)
 	pixel_z = rand(-8, 8)

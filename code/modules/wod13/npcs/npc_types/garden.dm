@@ -2,7 +2,7 @@
 	staying = TRUE
 	is_talking = TRUE
 
-/mob/living/carbon/human/npc/garden/Initialize()
+/mob/living/carbon/human/npc/garden/Initialize(mapload)
 	. = ..()
 
 	if (prob(66))

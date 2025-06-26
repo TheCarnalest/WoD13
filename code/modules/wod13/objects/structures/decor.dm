@@ -3,7 +3,7 @@
 	icon = 'code/modules/wod13/tiles.dmi'
 	icon_state = "rugs"
 
-/obj/effect/decal/rugs/Initialize()
+/obj/effect/decal/rugs/Initialize(mapload)
 	. = ..()
 	icon_state = "rugs[rand(1, 11)]"
 
@@ -26,11 +26,11 @@
 /obj/structure/vampfence/corner/rich
 	icon = 'code/modules/wod13/32x48.dmi'
 
-/obj/structure/vampfence/Initialize()
+/obj/structure/vampfence/Initialize(mapload)
 	.=..()
 	AddElement(/datum/element/climbable)
 
-/obj/structure/vampfence/rich/Initialize()
+/obj/structure/vampfence/rich/Initialize(mapload)
 	.=..()
 	RemoveElement(/datum/element/climbable)
 
@@ -61,11 +61,11 @@
 /obj/effect/decal/lamplight
 	alpha = 0
 
-/obj/effect/decal/lamplight/Initialize()
+/obj/effect/decal/lamplight/Initialize(mapload)
 	. = ..()
 	set_light(4, 3, "#ffde9b")
 
-/obj/structure/lamppost/Initialize()
+/obj/structure/lamppost/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -156,7 +156,7 @@
 	pixel_w = -32
 	anchored = TRUE
 
-/obj/structure/trafficlight/Initialize()
+/obj/structure/trafficlight/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -169,7 +169,7 @@
 	icon = 'code/modules/wod13/tiles.dmi'
 	icon_state = "paper1"
 
-/obj/effect/decal/litter/Initialize()
+/obj/effect/decal/litter/Initialize(mapload)
 	. = ..()
 	icon_state = "paper[rand(1, 6)]"
 
@@ -178,7 +178,7 @@
 	icon = 'code/modules/wod13/tiles.dmi'
 	icon_state = "cardboard1"
 
-/obj/effect/decal/cardboard/Initialize()
+/obj/effect/decal/cardboard/Initialize(mapload)
 	. = ..()
 	icon_state = "cardboard[rand(1, 5)]"
 	var/matrix/M = matrix()
@@ -198,7 +198,7 @@
 /obj/structure/clothingrack/rand
 	icon_state = "rack2"
 
-/obj/structure/clothingrack/rand/Initialize()
+/obj/structure/clothingrack/rand/Initialize(mapload)
 	. = ..()
 	icon_state = "rack[rand(1, 5)]"
 
@@ -212,7 +212,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/clothinghanger/Initialize()
+/obj/structure/clothinghanger/Initialize(mapload)
 	. = ..()
 	icon_state = "hanger[rand(1, 4)]"
 
@@ -227,7 +227,7 @@
 	density = TRUE
 	pixel_w = -16
 
-/obj/structure/foodrack/Initialize()
+/obj/structure/foodrack/Initialize(mapload)
 	. = ..()
 	icon_state = "rack[rand(1, 5)]"
 
@@ -241,7 +241,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/trashcan/Initialize()
+/obj/structure/trashcan/Initialize(mapload)
 	. = ..()
 	if(prob(25))
 		icon_state = "garbage_open"
@@ -258,7 +258,7 @@
 	icon_state = "garbage1"
 	anchored = TRUE
 
-/obj/structure/trashbag/Initialize()
+/obj/structure/trashbag/Initialize(mapload)
 	. = ..()
 	var/garbagestate = rand(1, 9)
 	if(garbagestate > 6)
@@ -274,7 +274,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/hotelsign/Initialize()
+/obj/structure/hotelsign/Initialize(mapload)
 	. = ..()
 	set_light(3, 3, "#8e509e")
 	if(GLOB.winter)
@@ -293,7 +293,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/hotelbanner/Initialize()
+/obj/structure/hotelbanner/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -310,7 +310,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/milleniumsign/Initialize()
+/obj/structure/milleniumsign/Initialize(mapload)
 	. = ..()
 	set_light(3, 3, "#4299bb")
 
@@ -323,7 +323,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/anarchsign/Initialize()
+/obj/structure/anarchsign/Initialize(mapload)
 	. = ..()
 	set_light(3, 3, "#ffffff")
 	if(GLOB.winter)
@@ -341,7 +341,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/chinesesign/Initialize()
+/obj/structure/chinesesign/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -364,7 +364,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/arc/Initialize()
+/obj/structure/arc/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -407,7 +407,7 @@
 	icon_state = "hydrant"
 	anchored = TRUE
 
-/obj/structure/hydrant/Initialize()
+/obj/structure/hydrant/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -433,7 +433,7 @@
 	density = TRUE
 	pixel_w = -16
 
-/obj/structure/vampcar/Initialize()
+/obj/structure/vampcar/Initialize(mapload)
 	. = ..()
 	var/atom/movable/M = new(get_step(loc, EAST))
 	M.density = TRUE
@@ -564,7 +564,7 @@
 /obj/structure/barrels/rand
 	icon_state = "barrel2"
 
-/obj/structure/barrels/rand/Initialize()
+/obj/structure/barrels/rand/Initialize(mapload)
 	. = ..()
 	icon_state = "barrel[rand(1, 12)]"
 
@@ -583,7 +583,7 @@
 	icon = 'code/modules/wod13/props.dmi'
 	icon_state = "under1"
 
-/obj/effect/decal/pallet/Initialize()
+/obj/effect/decal/pallet/Initialize(mapload)
 	. = ..()
 	icon_state = "under[rand(1, 2)]"
 
@@ -592,7 +592,7 @@
 	icon = 'code/modules/wod13/props.dmi'
 	icon_state = "trash1"
 
-/obj/effect/decal/trash/Initialize()
+/obj/effect/decal/trash/Initialize(mapload)
 	. = ..()
 	icon_state = "trash[rand(1, 30)]"
 
@@ -609,7 +609,7 @@
 	movement_type = PHASING
 	var/mob/living/starter
 
-/obj/cargotrain/Initialize()
+/obj/cargotrain/Initialize(mapload)
 	. = ..()
 	icon_state = "[rand(2, 5)]"
 
@@ -633,7 +633,7 @@
 	anchored = TRUE
 
 
-/obj/cargocrate/Initialize()
+/obj/cargocrate/Initialize(mapload)
 	. = ..()
 	icon_state = "[rand(1, 5)]"
 	if(icon_state != "1")
@@ -989,7 +989,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/billiard_table/Initialize()
+/obj/structure/billiard_table/Initialize(mapload)
 	. = ..()
 	icon_state = "billiard[rand(1, 3)]"
 
@@ -1073,7 +1073,7 @@
 	pixel_w = -8
 	pixel_z = 32
 
-/obj/structure/strip_club/Initialize()
+/obj/structure/strip_club/Initialize(mapload)
 	. = ..()
 	set_light(3, 2, "#8e509e")
 
@@ -1086,7 +1086,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/cabaret_sign/Initialize()
+/obj/structure/cabaret_sign/Initialize(mapload)
 	. = ..()
 	set_light(3, 2, "#d98aec")
 
@@ -1099,7 +1099,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = TRUE
 
-/obj/structure/cabaret_sign2/Initialize()
+/obj/structure/cabaret_sign2/Initialize(mapload)
 	. = ..()
 	set_light(3, 2, "#d98aec")
 
@@ -1113,7 +1113,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/fire_barrel/Initialize()
+/obj/structure/fire_barrel/Initialize(mapload)
 	. = ..()
 	set_light(3, 2, "#ffa800")
 
@@ -1165,7 +1165,7 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
-/turf/open/floor/plating/bloodshit/Initialize()
+/turf/open/floor/plating/bloodshit/Initialize(mapload)
 	. = ..()
 	for(var/mob/living/L in src)
 		if(L)
@@ -1275,7 +1275,7 @@
 	icon = 'code/modules/wod13/64x64.dmi'
 	large = TRUE
 
-/obj/effect/decal/graffiti/Initialize()
+/obj/effect/decal/graffiti/Initialize(mapload)
 	. = ..()
 	if(!large)
 		icon_state = "graffiti[rand(1, 15)]"
@@ -1292,7 +1292,7 @@
 	anchored = TRUE
 	density = TRUE
 
-/obj/structure/roofstuff/Initialize()
+/obj/structure/roofstuff/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -1353,7 +1353,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	var/burned = FALSE
 
-/obj/structure/vamptree/Initialize()
+/obj/structure/vamptree/Initialize(mapload)
 	. = ..()
 	icon_state = "tree[rand(1, 11)]"
 	if(GLOB.winter)
@@ -1379,7 +1379,7 @@
 	pixel_w = -24
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
-/obj/structure/vamptree/pine/Initialize()
+/obj/structure/vamptree/pine/Initialize(mapload)
 	. = ..()
 	icon_state = "pine[rand(1, 4)]"
 	if(GLOB.winter)
@@ -1441,7 +1441,7 @@
 	layer = ABOVE_ALL_MOB_LAYER
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
-/obj/weapon_showcase/Initialize()
+/obj/weapon_showcase/Initialize(mapload)
 	. = ..()
 	icon_state = "showcase[rand(1, 7)]"
 
@@ -1463,7 +1463,7 @@
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
-/obj/structure/vamprocks/Initialize()
+/obj/structure/vamprocks/Initialize(mapload)
 	. = ..()
 	icon_state = "rock[rand(1, 9)]"
 
@@ -1477,7 +1477,7 @@
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
-/obj/structure/small_vamprocks/Initialize()
+/obj/structure/small_vamprocks/Initialize(mapload)
 	. = ..()
 	icon_state = "smallrock[rand(1, 6)]"
 
@@ -1493,7 +1493,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	pixel_w = -16
 
-/obj/structure/big_vamprocks/Initialize()
+/obj/structure/big_vamprocks/Initialize(mapload)
 	. = ..()
 	icon_state = "rock[rand(1, 4)]"
 
@@ -1509,7 +1509,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	pixel_w = -16
 
-/obj/structure/stalagmite/Initialize()
+/obj/structure/stalagmite/Initialize(mapload)
 	. = ..()
 	icon_state = "stalagmite[rand(1, 5)]"
 

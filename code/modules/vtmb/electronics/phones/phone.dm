@@ -1,4 +1,4 @@
-/proc/create_unique_phone_number(var/exchange = 513)
+/proc/create_unique_phone_number(exchange = 513)
 	if(length(GLOB.subscribers_numbers_list) < 1)
 		create_subscribers_numbers()
 	var/subscriber_code = pick(GLOB.subscribers_numbers_list)
@@ -58,7 +58,7 @@
 	var/closed_state = "phone1"
 	var/folded_state = "phone0"
 
-/obj/item/vamp/phone/Initialize()
+/obj/item/vamp/phone/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_MOVABLE_HEAR, PROC_REF(handle_hearing))
 	if(!number || number == "")
@@ -126,7 +126,7 @@
 
 	return data
 /*
-/obj/item/vamp/phone/proc/OpenMenu(var/mob/mobila)
+/obj/item/vamp/phone/proc/OpenMenu(mob/mobila)
 	var/dat = "<body><center><h2>Phone</h2><BR>"
 	if(last_call+100 > world.time && !talking)
 		dat += "Calling...<BR>"
@@ -573,7 +573,7 @@
 		display |= "[entry["name"]]: [entry["number"]]
 	return display"*/
 
-/obj/item/vamp/phone/proc/Recall(var/obj/item/vamp/phone/abonent, var/mob/usar)
+/obj/item/vamp/phone/proc/Recall(obj/item/vamp/phone/abonent, mob/usar)
 	if(last_call+100 <= world.time && !talking)
 		last_call = 0
 		if(online)
@@ -779,12 +779,12 @@
 	var/obj/machinery/p25transceiver/clinic_transciever
 	var/obj/machinery/p25transceiver/police_transciever
 
-/obj/item/vamp/phone/emergency/Initialize()
+/obj/item/vamp/phone/emergency/Initialize(mapload)
 	. = ..()
 	GLOB.phone_numbers_list += number
 	GLOB.phones_list += src
 
-/obj/item/vamp/phone/clean/Initialize()
+/obj/item/vamp/phone/clean/Initialize(mapload)
 	. = ..()
 	GLOB.phone_numbers_list += number
 	GLOB.phones_list += src
@@ -794,7 +794,7 @@
 /obj/item/vamp/phone/prince
 	exchange_num = 267
 
-/obj/item/vamp/phone/prince/Initialize()
+/obj/item/vamp/phone/prince/Initialize(mapload)
 	..()
 	GLOB.princenumber = number
 	GLOB.princename = owner
@@ -822,7 +822,7 @@
 /obj/item/vamp/phone/sheriff
 	exchange_num = 267
 
-/obj/item/vamp/phone/sheriff/Initialize()
+/obj/item/vamp/phone/sheriff/Initialize(mapload)
 	..()
 	GLOB.sheriffnumber = number
 	GLOB.sheriffname = owner
@@ -836,7 +836,7 @@
 /obj/item/vamp/phone/clerk
 	exchange_num = 267
 
-/obj/item/vamp/phone/clerk/Initialize()
+/obj/item/vamp/phone/clerk/Initialize(mapload)
 	..()
 	GLOB.clerknumber = number
 	GLOB.clerkname = owner
@@ -862,7 +862,7 @@
 /obj/item/vamp/phone/barkeeper
 	exchange_num = 485
 
-/obj/item/vamp/phone/barkeeper/Initialize()
+/obj/item/vamp/phone/barkeeper/Initialize(mapload)
 	..()
 	GLOB.barkeepernumber = number
 	GLOB.barkeepername = owner
@@ -874,7 +874,7 @@
 /obj/item/vamp/phone/dealer
 	exchange_num = 485
 
-/obj/item/vamp/phone/dealer/Initialize()
+/obj/item/vamp/phone/dealer/Initialize(mapload)
 	..()
 	GLOB.dealernumber = number
 	GLOB.dealername = owner
@@ -887,7 +887,7 @@
 	var/datum/phonecontact/barkeeper/BARKEEPER = new()
 	contacts += BARKEEPER
 
-/obj/item/vamp/phone/supply_tech/Initialize()
+/obj/item/vamp/phone/supply_tech/Initialize(mapload)
 	..()
 	var/datum/phonecontact/dealer/DEALER = new()
 	contacts += DEALER
@@ -895,7 +895,7 @@
 /obj/item/vamp/phone/camarilla
 	exchange_num = 267
 
-/obj/item/vamp/phone/camarilla/Initialize()
+/obj/item/vamp/phone/camarilla/Initialize(mapload)
 	..()
 //	GLOB.dealernumber = number
 	var/datum/phonecontact/prince/PRINCE = new()
@@ -906,13 +906,13 @@
 /obj/item/vamp/phone/anarch
 	exchange_num = 485
 
-/obj/item/vamp/phone/anarch/Initialize()
+/obj/item/vamp/phone/anarch/Initialize(mapload)
 	..()
 //	GLOB.dealernumber = number
 	var/datum/phonecontact/barkeeper/BARKEEPER = new()
 	contacts += BARKEEPER
 
-/obj/item/vamp/phone/malkavian/Initialize()
+/obj/item/vamp/phone/malkavian/Initialize(mapload)
 	..()
 	GLOB.malkaviannumber = number
 	GLOB.malkavianname = owner
@@ -929,7 +929,7 @@
 	var/datum/phonecontact/brujah/B = new()
 	contacts += B
 
-/obj/item/vamp/phone/nosferatu/Initialize()
+/obj/item/vamp/phone/nosferatu/Initialize(mapload)
 	..()
 	GLOB.nosferatunumber = number
 	GLOB.nosferatuname = owner
@@ -946,7 +946,7 @@
 	var/datum/phonecontact/brujah/B = new()
 	contacts += B
 
-/obj/item/vamp/phone/toreador/Initialize()
+/obj/item/vamp/phone/toreador/Initialize(mapload)
 	..()
 	GLOB.toreadornumber = number
 	GLOB.toreadorname = owner
@@ -963,7 +963,7 @@
 	var/datum/phonecontact/brujah/B = new()
 	contacts += B
 
-/obj/item/vamp/phone/brujah/Initialize()
+/obj/item/vamp/phone/brujah/Initialize(mapload)
 	..()
 	GLOB.brujahnumber = number
 	GLOB.brujahname = owner
@@ -980,7 +980,7 @@
 	var/datum/phonecontact/ventrue/V = new()
 	contacts += V
 
-/obj/item/vamp/phone/ventrue/Initialize()
+/obj/item/vamp/phone/ventrue/Initialize(mapload)
 	..()
 	GLOB.ventruenumber = number
 	GLOB.ventruename = owner
@@ -997,7 +997,7 @@
 	var/datum/phonecontact/brujah/B = new()
 	contacts += B
 
-/obj/item/vamp/phone/tremere/Initialize()
+/obj/item/vamp/phone/tremere/Initialize(mapload)
 	..()
 	GLOB.tremerenumber = number
 	GLOB.tremerename = owner
@@ -1014,7 +1014,7 @@
 	var/datum/phonecontact/brujah/B = new()
 	contacts += B
 
-/obj/item/vamp/phone/archivist/Initialize()
+/obj/item/vamp/phone/archivist/Initialize(mapload)
 	..()
 	var/datum/phonecontact/tremere/REGENT = new()
 	contacts += REGENT

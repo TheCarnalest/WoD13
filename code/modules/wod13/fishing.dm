@@ -12,7 +12,7 @@
 	name = "leopard shark"
 	icon_state = "fish1"
 
-/obj/item/food/fish/shark/Initialize()
+/obj/item/food/fish/shark/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 400, "fish", FALSE)
 
@@ -20,7 +20,7 @@
 	name = "tuna"
 	icon_state = "fish2"
 
-/obj/item/food/fish/tune/Initialize()
+/obj/item/food/fish/tune/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 125, "fish", FALSE)
 
@@ -28,7 +28,7 @@
 	name = "catfish"
 	icon_state = "fish3"
 
-/obj/item/food/fish/catfish/Initialize()
+/obj/item/food/fish/catfish/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 50, "fish", FALSE)
 
@@ -36,7 +36,7 @@
 	name = "crab"
 	icon_state = "fish4"
 
-/obj/item/food/fish/crab/Initialize()
+/obj/item/food/fish/crab/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 200, "fish", FALSE)
 

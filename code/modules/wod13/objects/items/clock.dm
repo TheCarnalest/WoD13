@@ -12,7 +12,7 @@
 	slot_flags = ITEM_SLOT_GLOVES | ITEM_SLOT_ID
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 
-/obj/item/cockclock/Initialize()
+/obj/item/cockclock/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 50, "watch", FALSE)
 

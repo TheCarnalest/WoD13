@@ -1,6 +1,6 @@
 /mob/living/carbon/human/npc/walkby
 
-/mob/living/carbon/human/npc/walkby/Initialize()
+/mob/living/carbon/human/npc/walkby/Initialize(mapload)
 	. = ..()
 
 	if (prob(50))

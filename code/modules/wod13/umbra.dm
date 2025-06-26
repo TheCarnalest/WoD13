@@ -20,7 +20,7 @@
 	density = TRUE
 	planetary_atmos = TRUE
 
-/turf/open/floor/plating/umbra/Initialize()
+/turf/open/floor/plating/umbra/Initialize(mapload)
 	. = ..()
 	var/obj/minespot/M = locate() in src
 	if(M)
@@ -40,7 +40,7 @@
 	var/bomb = FALSE
 	var/uncovered = FALSE
 
-/obj/minespot/Initialize()
+/obj/minespot/Initialize(mapload)
 	. = ..()
 	color = "#8e8e8e"
 	icon_state = "tile[rand(1, 16)]"
@@ -48,7 +48,7 @@
 /obj/minespot/playable
 	name = "umbral tether"
 
-/obj/minespot/playable/Initialize()
+/obj/minespot/playable/Initialize(mapload)
 	. = ..()
 	if(prob(30))
 		bomb = TRUE
@@ -155,7 +155,7 @@
 	var/obj/umbra_portal/exit
 	var/id
 
-/obj/umbra_portal/proc/later_initialize()
+/obj/umbra_portal/proc/later_Initialize(mapload)
 	set_light(2, 1, "#a4a0fb")
 	if(id)
 		for(var/obj/umbra_portal/U in GLOB.umbra_portals)

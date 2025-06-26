@@ -27,7 +27,7 @@
 	. = ..()
 	adjust_totem_health(round(P.damage/2))
 
-/obj/structure/werewolf_totem/Initialize()
+/obj/structure/werewolf_totem/Initialize(mapload)
 	. = ..()
 	for(var/obj/effect/landmark/teleport_mark/T in GLOB.landmarks_list)
 		if(T.tribe == tribe)
@@ -42,7 +42,7 @@
 	totem_light_overlay.color = totem_overlay_color
 	overlays |= totem_light_overlay
 
-/obj/structure/werewolf_totem/proc/adjust_totem_health(var/amount)
+/obj/structure/werewolf_totem/proc/adjust_totem_health(amount)
 	if(amount > 0)
 		if(totem_health == 0)
 			return

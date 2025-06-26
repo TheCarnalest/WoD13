@@ -4,7 +4,7 @@
 		"npc"
 	)
 
-/obj/item/vamp/keys/npc/Initialize()
+/obj/item/vamp/keys/npc/Initialize(mapload)
 	. = ..()
 	accesslocks = list(
 		"npc[rand(1, 20)]"

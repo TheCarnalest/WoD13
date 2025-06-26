@@ -43,7 +43,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 
-/obj/item/gun/ballistic/vampire/revolver/Initialize()
+/obj/item/gun/ballistic/vampire/revolver/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 25, "revolver", FALSE)
 
@@ -118,7 +118,7 @@
 	fire_sound_volume = 65
 	projectile_damage_multiplier = 1.2 //21.6 damage, slightly higher than the m1911, just so it is possible to kill NPCs within 6 bullets
 
-/obj/item/gun/ballistic/vampire/revolver/snub/Initialize()
+/obj/item/gun/ballistic/vampire/revolver/snub/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 20, "revolver_snub", FALSE)
 
@@ -166,7 +166,7 @@
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 75
 
-/obj/item/gun/ballistic/automatic/vampire/deagle/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/deagle/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 75, "deagle", FALSE)
 
@@ -229,7 +229,7 @@
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 100
 
-/obj/item/gun/ballistic/automatic/vampire/m1911/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/m1911/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 55, "colt1911", FALSE)
 
@@ -270,7 +270,7 @@
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 100
 
-/obj/item/gun/ballistic/automatic/vampire/glock19/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/glock19/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 70, "glock19", FALSE)
 
@@ -311,7 +311,7 @@
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 100
 
-/obj/item/gun/ballistic/automatic/vampire/glock21/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/glock21/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 150, "glock21", FALSE)
 
@@ -340,7 +340,7 @@
 	bolt_drop_sound = 'sound/weapons/gun/pistol/drop_small.ogg'
 	fire_sound_volume = 75
 
-/obj/item/gun/ballistic/automatic/vampire/beretta/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/beretta/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 70, "beretta", FALSE)
 
@@ -353,7 +353,7 @@
 	projectile_damage_multiplier = 2.5
 	fire_sound_volume = 110
 
-/obj/item/gun/ballistic/automatic/vampire/beretta/toreador/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/beretta/toreador/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 666, "toreador_beretta", FALSE)
 
@@ -403,7 +403,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	fire_sound = 'code/modules/wod13/sounds/uzi.ogg'
 
-/obj/item/gun/ballistic/automatic/vampire/uzi/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/uzi/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 175, "uzi", FALSE)
 
@@ -436,7 +436,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	fire_sound = 'code/modules/wod13/sounds/mp5.ogg'
 
-/obj/item/gun/ballistic/automatic/vampire/mp5/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/mp5/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 200, "mp5", FALSE)
 
@@ -476,7 +476,7 @@
 	fire_sound = 'code/modules/wod13/sounds/rifle.ogg'
 	masquerade_violating = TRUE
 
-/obj/item/gun/ballistic/automatic/vampire/ar15/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/ar15/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 75, "ar15", FALSE)
 
@@ -498,7 +498,7 @@
 	fire_sound = 'code/modules/wod13/sounds/rifle.ogg'
 	masquerade_violating = FALSE
 
-/obj/item/gun/ballistic/automatic/vampire/huntrifle/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/huntrifle/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 70, "hunting_rifle", FALSE)
 
@@ -534,7 +534,7 @@
 	fire_sound = 'code/modules/wod13/sounds/ak.ogg'
 	masquerade_violating = TRUE
 
-/obj/item/gun/ballistic/automatic/vampire/ak74/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/ak74/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 225, "ak74", FALSE)
 
@@ -570,7 +570,7 @@
 	masquerade_violating = TRUE
 	is_iron = FALSE
 
-/obj/item/gun/ballistic/automatic/vampire/aug/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/aug/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 350, "aug", FALSE)
 
@@ -606,7 +606,7 @@
 	fire_sound = 'code/modules/wod13/sounds/thompson.ogg'
 	masquerade_violating = TRUE
 
-/obj/item/gun/ballistic/automatic/vampire/thompson/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/thompson/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 250, "thompson", FALSE)
 
@@ -648,7 +648,7 @@
 	actions_types = list()
 	masquerade_violating = TRUE
 
-/obj/item/gun/ballistic/automatic/vampire/sniper/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/sniper/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 75, "sniper", FALSE)
 
@@ -715,7 +715,7 @@
 	masquerade_violating = TRUE
 	recoil = 6
 
-/obj/item/gun/ballistic/automatic/vampire/autoshotgun/Initialize()
+/obj/item/gun/ballistic/automatic/vampire/autoshotgun/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/selling, 75, "autoshotgun", FALSE)
 

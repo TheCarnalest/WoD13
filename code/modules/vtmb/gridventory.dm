@@ -16,7 +16,7 @@ VENTORY!
 /// jimmy joger variable
 #define CHECK_BITFIELD(variable, flag) (variable & (flag))
 
-/obj/item/storage/Initialize()
+/obj/item/storage/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
@@ -109,7 +109,7 @@ VENTORY!
 	var/maximum_depth = 1
 	var/storage_flags = NONE
 
-/obj/item/storage/ComponentInitialize() //backpacks are smaller but hold larger things
+/obj/item/storage/ComponentInitialize(mapload) //backpacks are smaller but hold larger things
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_HUGE
@@ -1120,3 +1120,7 @@ VENTORY!
 /obj/item/vampire/drill
 	grid_width = 10 GRID_BOXES
 	grid_height = 10 GRID_BOXES
+
+#undef STORAGE_NO_WORN_ACCESS
+#undef STORAGE_NO_EQUIPPED_ACCESS
+#undef CHECK_BITFIELD

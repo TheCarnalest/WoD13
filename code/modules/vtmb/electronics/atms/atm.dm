@@ -104,7 +104,7 @@
 	else
 		account.balance = rand(600, 1000)
 
-/obj/machinery/vamp/atm/Initialize()
+/obj/machinery/vamp/atm/Initialize(mapload)
 	..()
 
 /obj/machinery/vamp/atm/attackby(obj/item/P, mob/user, params)

@@ -6,6 +6,6 @@
 	burnable = TRUE
 	lockpick_difficulty = 4
 
-/obj/structure/vampdoor/npc/Initialize()
+/obj/structure/vampdoor/npc/Initialize(mapload)
 	. = ..()
 	lock_id = "npc[rand(1, 20)]"

@@ -61,7 +61,7 @@
 /obj/item/police_radio/proc/dispatcher_talk(said)
 	say(said)
 
-/obj/item/police_radio/Initialize()
+/obj/item/police_radio/Initialize(mapload)
 	. = ..()
 	GLOB.police_radios += src
 
@@ -69,7 +69,7 @@
 	. = ..()
 	GLOB.police_radios -= src
 
-/mob/living/carbon/Initialize()
+/mob/living/carbon/Initialize(mapload)
 	. = ..()
 	var/datum/atom_hud/abductor/hud = GLOB.huds[DATA_HUD_ABDUCTOR]
 	hud.add_to_hud(src)

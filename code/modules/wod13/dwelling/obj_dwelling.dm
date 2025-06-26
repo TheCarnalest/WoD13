@@ -11,7 +11,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/loot_value = 0 // From 1 to 3 assings value and changes description. This should be replaced by a full proc at some point, but will do for a first implementation.
 
-/obj/item/vtm/dwelling_loot/Initialize()
+/obj/item/vtm/dwelling_loot/Initialize(mapload)
 	. = ..()
 	switch(loot_value)
 		if(1)
@@ -61,7 +61,7 @@
 	var/search_hits_left = 0 // These should be automated by the system, btu tries typically are double the hits.
 	var/currently_searched = 0 // Terminator for when in use
 
-/obj/structure/vtm/dwelling_container/Initialize()
+/obj/structure/vtm/dwelling_container/Initialize(mapload)
 	var/area/vtm/dwelling/current_area = get_area(src)
 	if(current_area)
 		current_area.loot_containers.Add(src)
@@ -184,7 +184,7 @@
 	if(area_reference.cased_by.Find(user) == 0)
 		start_casing(user)
 
-/obj/structure/vampdoor/dwelling/Initialize()
+/obj/structure/vampdoor/dwelling/Initialize(mapload)
 	var/area/vtm/dwelling/current_area = get_area(src)
 	if(current_area)
 		current_area.dwelling_doors.Add(src)
@@ -260,7 +260,7 @@
 	var/alarm_active = 0
 	var/alarm_safety = 0
 
-/obj/structure/vtm/dwelling_alarm/Initialize()
+/obj/structure/vtm/dwelling_alarm/Initialize(mapload)
 	var/area/vtm/dwelling/current_area = get_area(src)
 	if(current_area)
 		current_area.alarm_panel = src

@@ -39,7 +39,7 @@
 	var/list/enemies = list()
 	var/mob/living/targa
 
-/mob/living/simple_animal/hostile/beastmaster/Initialize()
+/mob/living/simple_animal/hostile/beastmaster/Initialize(mapload)
 	. = ..()
 	GLOB.beast_list += src
 

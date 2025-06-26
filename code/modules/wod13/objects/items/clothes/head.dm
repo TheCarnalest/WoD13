@@ -18,7 +18,7 @@
 	acid = 10
 	wound = 10
 
-/obj/item/clothing/head/vampire/Initialize()
+/obj/item/clothing/head/vampire/Initialize(mapload)
 	. = ..()
 	// TODO: [Lucia] reimplement selling stuff
 	//AddComponent(/datum/component/selling, 10, "headwear", FALSE)

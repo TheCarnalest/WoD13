@@ -23,7 +23,7 @@
 	maxbloodpool = 10
 	faction = list("Baali")
 
-/mob/living/simple_animal/hostile/baali_guard/Initialize()
+/mob/living/simple_animal/hostile/baali_guard/Initialize(mapload)
 	. = ..()
 	give_player()
 

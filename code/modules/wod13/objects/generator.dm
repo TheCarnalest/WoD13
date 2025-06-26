@@ -63,7 +63,7 @@
 		else
 			switching_on = FALSE
 
-/obj/generator/Initialize()
+/obj/generator/Initialize(mapload)
 	. = ..()
 	GLOB.generators += src
 	START_PROCESSING(SSobj, src)

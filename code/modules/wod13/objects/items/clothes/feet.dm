@@ -13,7 +13,7 @@
 	gender = PLURAL
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 
-/obj/item/clothing/shoes/vampire/Initialize()
+/obj/item/clothing/shoes/vampire/Initialize(mapload)
 	. = ..()
 	// TODO: [Lucia] reimplement selling stuff
 	//AddComponent(/datum/component/selling, 5, "shoes", FALSE)
@@ -29,7 +29,7 @@
 	desc = "Robust-looking boots."
 	icon_state = "jackboots"
 
-/obj/item/clothing/shoes/vampire/jackboots/Initialize()
+/obj/item/clothing/shoes/vampire/jackboots/Initialize(mapload)
 	. = ..()
 
 	create_storage(storage_type = /datum/storage/pockets/shoes)

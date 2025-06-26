@@ -85,7 +85,7 @@
 /turf/closed/wall/vampwall/ex_act(severity, target)
 	return
 
-/turf/closed/wall/vampwall/Initialize()
+/turf/closed/wall/vampwall/Initialize(mapload)
 	..()
 	if(window)
 		var/obj/W = new window(src)
@@ -383,7 +383,7 @@
 	icon_state = "decal1"
 	mouse_opacity = 0
 
-/obj/effect/decal/asphalt/Initialize()
+/obj/effect/decal/asphalt/Initialize(mapload)
 	..()
 	icon_state = "decal[rand(1, 24)]"
 	update_icon()
@@ -409,7 +409,7 @@
 /obj/effect/decal/asphaltline/alt
 	icon_state = "line_alt"
 
-/obj/effect/decal/asphaltline/Initialize()
+/obj/effect/decal/asphaltline/Initialize(mapload)
 	..()
 	icon_state = "[initial(icon_state)][rand(1, 3)]"
 	update_icon()
@@ -425,7 +425,7 @@
 	icon_state = "crosswalk1"
 	mouse_opacity = 0
 
-/obj/effect/decal/crosswalk/Initialize()
+/obj/effect/decal/crosswalk/Initialize(mapload)
 	..()
 	icon_state = "crosswalk[rand(1, 3)]"
 	update_icon()
@@ -448,7 +448,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/asphalt/Initialize()
+/turf/open/floor/plating/asphalt/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -491,7 +491,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/sidewalkalt/Initialize()
+/turf/open/floor/plating/sidewalkalt/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -518,7 +518,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/sidewalk/Initialize()
+/turf/open/floor/plating/sidewalk/Initialize(mapload)
 	. = ..()
 	icon_state = "[based_icon_state][rand(1, number_of_variations)]"
 	set_light(1, 0.5, "#a4b7ff")
@@ -559,7 +559,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/roofwalk/Initialize()
+/turf/open/floor/plating/roofwalk/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -584,7 +584,7 @@
 	icon_state = "border"
 	mouse_opacity = 0
 
-/obj/effect/decal/bordur/Initialize()
+/obj/effect/decal/bordur/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -649,7 +649,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/concrete/Initialize()
+/turf/open/floor/plating/concrete/Initialize(mapload)
 	..()
 	icon_state = "concrete[rand(1, 4)]"
 
@@ -705,7 +705,7 @@
 					new /obj/structure/bury_pit(src)
 
 
-/turf/open/floor/plating/vampgrass/Initialize()
+/turf/open/floor/plating/vampgrass/Initialize(mapload)
 	..()
 	set_light(1, 0.5, "#a4b7ff")
 	icon_state = "grass[rand(1, 3)]"
@@ -783,7 +783,7 @@
 					user.visible_message("<span class='warning'>[user] digs a hole in [src].</span>", "<span class='warning'>You dig a hole in [src].</span>")
 					new /obj/structure/bury_pit(src)
 
-/turf/open/floor/plating/vampdirt/Initialize()
+/turf/open/floor/plating/vampdirt/Initialize(mapload)
 	. = ..()
 	set_light(1, 0.5, "#a4b7ff")
 	if(GLOB.winter)
@@ -800,7 +800,7 @@
 	name = "rails"
 	icon_state = "dirt_rails"
 
-/turf/open/floor/plating/vampdirt/rails/Initialize()
+/turf/open/floor/plating/vampdirt/rails/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -847,7 +847,7 @@
 /turf/open/floor/plating/rough/cave
 	icon_state = "cave1"
 
-/turf/open/floor/plating/rough/cave/Initialize()
+/turf/open/floor/plating/rough/cave/Initialize(mapload)
 	. = ..()
 	icon_state = "cave[rand(1, 7)]"
 
@@ -867,7 +867,7 @@
 /turf/open/floor/plating/stone
 	icon_state = "stone1"
 
-/turf/open/floor/plating/stone/Initialize()
+/turf/open/floor/plating/stone/Initialize(mapload)
 	.=..()
 	icon_state = "cave[rand(1, 7)]"
 
@@ -884,7 +884,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/toilet/Initialize()
+/turf/open/floor/plating/toilet/Initialize(mapload)
 	..()
 	icon_state = "toilet[rand(1, 9)]"
 
@@ -901,7 +901,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/circled/Initialize()
+/turf/open/floor/plating/circled/Initialize(mapload)
 	..()
 	icon_state = "circle[rand(1, 8)]"
 
@@ -918,7 +918,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/church/Initialize()
+/turf/open/floor/plating/church/Initialize(mapload)
 	..()
 	icon_state = "church[rand(1, 4)]"
 
@@ -935,7 +935,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/saint/Initialize()
+/turf/open/floor/plating/saint/Initialize(mapload)
 	..()
 	icon_state = "saint[rand(1, 2)]"
 
@@ -949,7 +949,7 @@
 	layer = ABOVE_NORMAL_TURF_LAYER	//WALLPAPER_LAYER dont work
 	mouse_opacity = 0
 
-/obj/effect/decal/wallpaper/Initialize()
+/obj/effect/decal/wallpaper/Initialize(mapload)
 	..()
 	if(isclosedturf(loc))
 		forceMove(get_step(src, SOUTH))
@@ -1048,7 +1048,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/vampwood/Initialize()
+/turf/open/floor/plating/vampwood/Initialize(mapload)
 	..()
 	set_light(1, 0.5, "#a4b7ff")
 	if(GLOB.winter)
@@ -1112,7 +1112,7 @@
 					user.visible_message("<span class='warning'>[user] digs a hole in [src].</span>", "<span class='warning'>You dig a hole in [src].</span>")
 					new /obj/structure/bury_pit(src)
 
-/turf/open/floor/plating/vampbeach/Initialize()
+/turf/open/floor/plating/vampbeach/Initialize(mapload)
 	..()
 	icon_state = "sand[rand(1, 4)]"
 	set_light(1, 0.5, "#a4b7ff")
@@ -1136,7 +1136,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	density = TRUE
 
-/turf/open/floor/plating/vampocean/Initialize()
+/turf/open/floor/plating/vampocean/Initialize(mapload)
 	..()
 	set_light(1, 0.5, "#a4b7ff")
 
@@ -1154,7 +1154,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	density = FALSE
 
-/turf/open/floor/plating/vampacid/Initialize()
+/turf/open/floor/plating/vampacid/Initialize(mapload)
 	..()
 	set_light(1, 0.5, "#1b7c4c")
 
@@ -1186,7 +1186,7 @@
 	icon = 'code/modules/wod13/tiles.dmi'
 	icon_state = "shadow"
 
-/obj/effect/decal/shadow/Initialize()
+/obj/effect/decal/shadow/Initialize(mapload)
 	. = ..()
 	if(istype(loc, /turf/open/openspace))
 		forceMove(get_step(src, NORTH))
@@ -1211,7 +1211,7 @@
 	heavyfootstep = FOOTSTEP_WATER
 
 /*
-/turf/open/floor/plating/shit/Initialize()
+/turf/open/floor/plating/shit/Initialize(mapload)
 	. = ..()
 	if(prob(50))
 		new /obj/effect/realistic_fog(src)
@@ -1239,7 +1239,7 @@
 		if(prob(10))
 			new /mob/living/simple_animal/pet/rat(oldloc)
 
-/turf/open/floor/plating/vampcanal/Initialize()
+/turf/open/floor/plating/vampcanal/Initialize(mapload)
 	..()
 	icon_state = "canal[rand(1, 3)]"
 
@@ -1262,7 +1262,7 @@
 		if(prob(10))
 			new /mob/living/simple_animal/pet/rat(oldloc)
 
-/turf/open/floor/plating/vampcanal/Initialize()
+/turf/open/floor/plating/vampcanal/Initialize(mapload)
 	..()
 	icon_state = "canal_plating[rand(1, 4)]"
 

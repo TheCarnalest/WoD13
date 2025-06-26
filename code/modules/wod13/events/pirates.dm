@@ -263,7 +263,7 @@
 	var/sending_timer
 	var/cargo_hold_id
 
-/obj/machinery/computer/piratepad_control/Initialize()
+/obj/machinery/computer/piratepad_control/Initialize(mapload)
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
@@ -274,7 +274,7 @@
 		pad = I.buffer
 		return TRUE
 
-/obj/machinery/computer/piratepad_control/LateInitialize()
+/obj/machinery/computer/piratepad_control/LateInitialize(mapload)
 	. = ..()
 	if(cargo_hold_id)
 		for(var/obj/machinery/piratepad/P in GLOB.machines)

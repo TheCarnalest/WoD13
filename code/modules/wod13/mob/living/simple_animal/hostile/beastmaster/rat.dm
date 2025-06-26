@@ -36,7 +36,7 @@
 	speed = 0
 	dodging = TRUE
 
-/mob/living/simple_animal/hostile/beastmaster/rat/Initialize()
+/mob/living/simple_animal/hostile/beastmaster/rat/Initialize(mapload)
 	. = ..()
 
 	pixel_w = rand(-8, 8)

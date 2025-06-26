@@ -33,7 +33,7 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	var/climbing = FALSE
 
-/obj/manholedown/Initialize()
+/obj/manholedown/Initialize(mapload)
 	. = ..()
 	if(GLOB.winter)
 		if(istype(get_area(src), /area/vtm))
@@ -69,7 +69,7 @@
 	var/obj/transfer_point_vamp/exit
 	var/id = 1
 
-/obj/transfer_point_vamp/Initialize()
+/obj/transfer_point_vamp/Initialize(mapload)
 	. = ..()
 	if(!exit)
 		for(var/obj/transfer_point_vamp/T in world)
@@ -97,7 +97,7 @@
 	icon_state = "matrix_go"
 	layer = MID_TURF_LAYER
 
-/obj/transfer_point_vamp/umbral/Initialize()
+/obj/transfer_point_vamp/umbral/Initialize(mapload)
 	. = ..()
 	set_light(2, 1, "#a4a0fb")
 

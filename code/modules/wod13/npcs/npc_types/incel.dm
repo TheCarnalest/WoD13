@@ -1,7 +1,7 @@
 /mob/living/carbon/human/npc/incel
 	staying = TRUE
 
-/mob/living/carbon/human/npc/incel/Initialize()
+/mob/living/carbon/human/npc/incel/Initialize(mapload)
 	. = ..()
 
 	if (prob(50))

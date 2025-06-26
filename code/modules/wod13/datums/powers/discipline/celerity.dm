@@ -40,7 +40,7 @@
 	desc = "..."
 	anchored = TRUE
 
-/obj/effect/celerity/Initialize()
+/obj/effect/celerity/Initialize(mapload)
 	. = ..()
 	spawn(0.5 SECONDS)
 		qdel(src)

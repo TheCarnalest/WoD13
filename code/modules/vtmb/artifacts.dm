@@ -231,7 +231,7 @@
 /obj/item/vtm_artifact/rand
 	icon_state = "art_rand"
 
-/obj/item/vtm_artifact/rand/Initialize()
+/obj/item/vtm_artifact/rand/Initialize(mapload)
 	. = ..()
 	if (prob(50)) //50% chance of spawning something
 		var/spawn_artifact = pick(/obj/item/vtm_artifact/odious_chalice, /obj/item/vtm_artifact/key_of_alamut,

@@ -1,7 +1,7 @@
 /mob/living/carbon/human/npc/gummaguts
 	staying = TRUE
 
-/mob/living/carbon/human/npc/gummaguts/Initialize()
+/mob/living/carbon/human/npc/gummaguts/Initialize(mapload)
 	. = ..()
 
 	if (prob(66))

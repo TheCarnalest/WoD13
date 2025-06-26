@@ -154,7 +154,7 @@
 				if(T)
 					T.wash(CLEAN_WASH)
 
-/obj/effect/decal/gut_floor/Initialize()
+/obj/effect/decal/gut_floor/Initialize(mapload)
 	. = ..()
 	if(isopenturf(get_turf(src)))
 		var/turf/open/T = get_turf(src)
@@ -413,7 +413,7 @@
 		var/mob/dead/observer/C = pick(candidates)
 		key = C.key
 
-/mob/living/simple_animal/hostile/gargoyle/Initialize()
+/mob/living/simple_animal/hostile/gargoyle/Initialize(mapload)
 	. = ..()
 	var/datum/action/gargoyle/G = new()
 	G.Grant(src)

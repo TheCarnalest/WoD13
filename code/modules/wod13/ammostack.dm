@@ -239,7 +239,7 @@
 			I.forceMove(src)
 			update_icon()
 
-/obj/item/storage/ammostack/Initialize()
+/obj/item/storage/ammostack/Initialize(mapload)
 	. = ..()
 */
 

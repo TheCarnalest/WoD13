@@ -3,7 +3,7 @@
 	max_stat = 4
 	my_backup_weapon_type = /obj/item/melee/classic_baton/vampire
 
-/mob/living/carbon/human/npc/police/Initialize()
+/mob/living/carbon/human/npc/police/Initialize(mapload)
 	. = ..()
 
 	if (prob(66))

@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(p25_tranceivers)
 	var/p25_network = "default"
 	var/list/registered_callsigns = list()
 
-/obj/machinery/p25transceiver/Initialize()
+/obj/machinery/p25transceiver/Initialize(mapload)
 	. = ..()
 	GLOB.p25_tranceivers += src
 
@@ -224,7 +224,7 @@ GLOBAL_LIST_EMPTY(p25_tranceivers)
 	density = TRUE
 	var/obj/machinery/p25transceiver/police/transceiver
 
-/obj/machinery/p25policeportal/LateInitialize()
+/obj/machinery/p25policeportal/LateInitialize(mapload)
 	. = ..()
 	for(var/obj/machinery/p25transceiver/P in GLOB.p25_tranceivers)
 		if(P.p25_network == "police")
@@ -448,7 +448,7 @@ GLOBAL_LIST_EMPTY(p25_tranceivers)
 	var/in_restricted_area = FALSE
 	var/powered = TRUE  // New var to track power state
 
-/obj/item/p25radio/Initialize()
+/obj/item/p25radio/Initialize(mapload)
 	. = ..()
 	GLOB.p25_radios += src
 
@@ -656,7 +656,7 @@ GLOBAL_LIST_EMPTY(p25_tranceivers)
 	var/last_status_change = 0
 	var/status_cooldown = 100
 
-/obj/item/p25radio/police/Initialize()
+/obj/item/p25radio/police/Initialize(mapload)
 	. = ..()
 	GLOB.police_radios += src
 

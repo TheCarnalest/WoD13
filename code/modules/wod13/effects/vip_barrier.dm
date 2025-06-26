@@ -30,7 +30,7 @@
 	var/datum/vip_barrier_perm/linked_perm = null
 
 
-/obj/effect/vip_barrier/Initialize()
+/obj/effect/vip_barrier/Initialize(mapload)
 	. = ..()
 
 	if(src.type == /obj/effect/vip_barrier)

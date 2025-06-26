@@ -1,7 +1,7 @@
 /mob/living/carbon/human/npc/stripper
 	staying = TRUE
 
-/mob/living/carbon/human/npc/stripper/Initialize()
+/mob/living/carbon/human/npc/stripper/Initialize(mapload)
 	. = ..()
 
 	set_body_weight(SLIM_BODY_WEIGHT)

@@ -14,7 +14,7 @@
 /datum/armor/vampire_clothes
 	wound = 15
 
-/obj/item/clothing/under/vampire/Initialize()
+/obj/item/clothing/under/vampire/Initialize(mapload)
 	. = ..()
 	// TODO: [Lucia] reimplement selling stuff
 	//AddComponent(/datum/component/selling, 10, "undersuit", FALSE)
