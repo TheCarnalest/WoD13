@@ -8,8 +8,8 @@
 	name = "Presence power name"
 	desc = "Presence power description"
 
-	activate_sound = 'code/modules/wod13/sounds/presence_activate.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/presence_deactivate.ogg'
+	activate_sound = 'sound/wod13/presence_activate.ogg'
+	deactivate_sound = 'sound/wod13/presence_deactivate.ogg'
 
 //AWE
 /datum/discipline_power/presence/awe

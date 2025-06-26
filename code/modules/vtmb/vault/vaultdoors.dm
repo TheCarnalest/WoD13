@@ -21,9 +21,9 @@
 	var/is_broken = FALSE
 	var/door_health = 100
 
-	var/open_sound = 'code/modules/wod13/sounds/vault_door_opening.ogg'
-	var/close_sound = 'code/modules/wod13/sounds/vault_door_closing.ogg'
-	var/lock_sound = 'code/modules/wod13/sounds/vault_door_lock.ogg'
+	var/open_sound = 'sound/wod13/vault_door_opening.ogg'
+	var/close_sound = 'sound/wod13/vault_door_closing.ogg'
+	var/lock_sound = 'sound/wod13/vault_door_lock.ogg'
 
 	//[Lucifernix] - Do the doors use keys, combination locks, or electric pin codes, or a mix of all three?
 	var/uses_key_lock = FALSE

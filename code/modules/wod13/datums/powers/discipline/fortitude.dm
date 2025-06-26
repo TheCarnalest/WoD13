@@ -8,8 +8,8 @@
 	name = "Fortitude power name"
 	desc = "Fortitude power description"
 
-	activate_sound = 'code/modules/wod13/sounds/fortitude_activate.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/fortitude_deactivate.ogg'
+	activate_sound = 'sound/wod13/fortitude_activate.ogg'
+	deactivate_sound = 'sound/wod13/fortitude_deactivate.ogg'
 
 //FORTITUDE 1
 /datum/discipline_power/fortitude/one

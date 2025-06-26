@@ -136,10 +136,10 @@
 	dharma.align_virtues(kueijin)
 
 	if(dot < 0)
-		SEND_SOUND(kueijin, sound('code/modules/wod13/sounds/dharma_decrease.ogg', 0, 0, 75))
+		SEND_SOUND(kueijin, sound('sound/wod13/dharma_decrease.ogg', 0, 0, 75))
 		to_chat(kueijin, "<span class='userdanger'><b>DHARMA FALLS!</b></span>")
 	else if(dot > 0)
-		SEND_SOUND(kueijin, sound('code/modules/wod13/sounds/dharma_increase.ogg', 0, 0, 75))
+		SEND_SOUND(kueijin, sound('sound/wod13/dharma_increase.ogg', 0, 0, 75))
 		to_chat(kueijin, "<span class='userdanger'><b>DHARMA RISES!</b></span>")
 
 	if(dharma.level < 5)

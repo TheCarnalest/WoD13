@@ -466,7 +466,7 @@
 			var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 			s.set_up(5, 1, get_turf(src))
 			s.start()
-			playsound(loc, 'code/modules/wod13/sounds/explode.ogg', 100, TRUE)
+			playsound(loc, 'sound/wod13/explode.ogg', 100, TRUE)
 			qdel(src)
 
 /obj/machinery/light/prince/broken
@@ -729,7 +729,7 @@
 			var/money_to_spend = round(gas_to_dispense/20)
 			G.stored_gasoline = min(1000, G.stored_gasoline+gas_to_dispense)
 			stored_money = max(0, stored_money-money_to_spend)
-			playsound(loc, 'code/modules/wod13/sounds/gas_fill.ogg', 50, TRUE)
+			playsound(loc, 'sound/wod13/gas_fill.ogg', 50, TRUE)
 			to_chat(user, "<span class='notice'>You fill [I].</span>")
 			say("Gas filled.")
 

@@ -9,7 +9,7 @@
 	emote_see = list("shakes its head.", "shivers.")
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
-	attack_sound = 'code/modules/wod13/sounds/rat.ogg'
+	attack_sound = 'sound/wod13/rat.ogg'
 	speak_chance = 0
 	turns_per_move = 5
 	see_in_dark = 6

@@ -25,7 +25,7 @@
 	target_type = TARGET_LIVING
 	range = 7
 
-	activate_sound = 'code/modules/wod13/sounds/thaum.ogg'
+	activate_sound = 'sound/wod13/thaum.ogg'
 	aggravating = TRUE
 	hostile = TRUE
 	violates_masquerade = TRUE
@@ -52,7 +52,7 @@
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	damage = 5
 	damage_type = BURN
-	hitsound = 'code/modules/wod13/sounds/drinkblood1.ogg'
+	hitsound = 'sound/wod13/drinkblood1.ogg'
 	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
 	flag = LASER
 	light_system = MOVABLE_LIGHT
@@ -187,7 +187,7 @@
 
 	level = 4
 
-	effect_sound = 'code/modules/wod13/sounds/vomit.ogg'
+	effect_sound = 'sound/wod13/vomit.ogg'
 
 	grouped_powers = list(
 		/datum/discipline_power/thaumaturgy/a_taste_for_blood,
@@ -215,7 +215,7 @@
 
 	level = 5
 
-	effect_sound = 'code/modules/wod13/sounds/vomit.ogg'
+	effect_sound = 'sound/wod13/vomit.ogg'
 
 	grouped_powers = list(
 		/datum/discipline_power/thaumaturgy/a_taste_for_blood,
@@ -310,7 +310,7 @@
 		to_chat(owner, span_warning("You don't have enough <b>BLOOD</b> to do that!"))
 		return
 	H.bloodpool = max(H.bloodpool - 2, 0)
-	playsound(H.loc, 'code/modules/wod13/sounds/thaum.ogg', 50, FALSE)
+	playsound(H.loc, 'sound/wod13/thaum.ogg', 50, FALSE)
 	abuse_fix = world.time
 	H.physiology.damage_resistance += 60
 	animate(H, color = "#ff0000", time = 10, loop = 1)
@@ -318,7 +318,7 @@
 		H.AdjustMasquerade(-1)
 	spawn(15 SECONDS)
 		if(H)
-			playsound(H.loc, 'code/modules/wod13/sounds/thaum.ogg', 50, FALSE)
+			playsound(H.loc, 'sound/wod13/thaum.ogg', 50, FALSE)
 			H.physiology.damage_resistance -= 60
 			H.color = initial(H.color)
 
@@ -330,7 +330,7 @@
 	cost = 2
 	ranged = FALSE
 	delay = 15 SECONDS
-	activate_sound = 'code/modules/wod13/sounds/thaum.ogg'
+	activate_sound = 'sound/wod13/thaum.ogg'
 
 /datum/discipline/bloodshield/activate(mob/living/target, mob/living/carbon/human/owner)
 	..()
@@ -341,7 +341,7 @@
 //	owner.color = "#ff0000"
 	spawn(delay+owner.discipline_time_plus)
 		if(owner)
-			playsound(owner.loc, 'code/modules/wod13/sounds/thaum.ogg', 50, FALSE)
+			playsound(owner.loc, 'sound/wod13/thaum.ogg', 50, FALSE)
 			owner.physiology.armor.melee = owner.physiology.armor.melee-(15*mod)
 			owner.physiology.armor.bullet = owner.physiology.armor.bullet-(15*mod)
 			owner.color = initial(owner.color)

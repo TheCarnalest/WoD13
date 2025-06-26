@@ -8,7 +8,7 @@
 	name = "Animalism power name"
 	desc = "Animalism power description"
 
-	effect_sound = 'code/modules/wod13/sounds/wolves.ogg'
+	effect_sound = 'sound/wod13/wolves.ogg'
 
 //SUMMON RAT
 /datum/discipline_power/animalism/summon_rat

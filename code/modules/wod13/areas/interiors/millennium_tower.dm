@@ -1,7 +1,7 @@
 /area/vtm/interior/millennium_tower
 	name = "Millennium Tower F1"
 	icon_state = "millenniumtowerf1"
-	ambient_buzz = 'code/modules/wod13/sounds/prince.ogg'
+	ambient_buzz = 'sound/wod13/prince.ogg'
 	zone_type = "elysium"
 	fire_controled = TRUE
 

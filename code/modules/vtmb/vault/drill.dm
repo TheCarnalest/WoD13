@@ -46,7 +46,7 @@
 	var/active = FALSE
 	var/attached_door = null
 
-	var/drill_sound = 'code/modules/wod13/sounds/vault_drilling.ogg'
+	var/drill_sound = 'sound/wod13/vault_drilling.ogg'
 
 /obj/structure/drill/proc/health_status()
 	if(obj_integrity < max_integrity)

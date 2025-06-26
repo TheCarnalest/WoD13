@@ -52,10 +52,10 @@
 						if(HS.my_creator.killed_count >= 5)
 //							GLOB.fuckers |= HS.my_creator
 							HS.my_creator.warrant = TRUE
-							SEND_SOUND(HS.my_creator, sound('code/modules/wod13/sounds/suspect.ogg', 0, 0, 75))
+							SEND_SOUND(HS.my_creator, sound('sound/wod13/suspect.ogg', 0, 0, 75))
 							to_chat(HS.my_creator, "<span class='userdanger'><b>POLICE ASSAULT IN PROGRESS</b></span>")
 						else
-							SEND_SOUND(HS.my_creator, sound('code/modules/wod13/sounds/sus.ogg', 0, 0, 75))
+							SEND_SOUND(HS.my_creator, sound('sound/wod13/sus.ogg', 0, 0, 75))
 							to_chat(HS.my_creator, "<span class='userdanger'><b>SUSPICIOUS ACTION (murder)</b></span>")
 			else
 				if(ishuman(last_attacker))
@@ -67,10 +67,10 @@
 						if(HM.killed_count >= 5)
 //							GLOB.fuckers |= HM
 							HM.warrant = TRUE
-							SEND_SOUND(HM, sound('code/modules/wod13/sounds/suspect.ogg', 0, 0, 75))
+							SEND_SOUND(HM, sound('sound/wod13/suspect.ogg', 0, 0, 75))
 							to_chat(HM, "<span class='userdanger'><b>POLICE ASSAULT IN PROGRESS</b></span>")
 						else
-							SEND_SOUND(HM, sound('code/modules/wod13/sounds/sus.ogg', 0, 0, 75))
+							SEND_SOUND(HM, sound('sound/wod13/sus.ogg', 0, 0, 75))
 							to_chat(HM, "<span class='userdanger'><b>SUSPICIOUS ACTION (murder)</b></span>")
 	remove_overlay(FIGHT_LAYER)
 	..()

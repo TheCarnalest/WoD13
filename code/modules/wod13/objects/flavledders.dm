@@ -18,7 +18,7 @@
 			if(L.pulling)
 				L.pulling.forceMove(destination)
 			user.forceMove(destination)
-			playsound(src, 'code/modules/wod13/sounds/manhole.ogg', 50, TRUE)
+			playsound(src, 'sound/wod13/manhole.ogg', 50, TRUE)
 		else
 			climbing = FALSE
 	..()
@@ -51,7 +51,7 @@
 			if(L.pulling)
 				L.pulling.forceMove(destination)
 			user.forceMove(destination)
-			playsound(src, 'code/modules/wod13/sounds/manhole.ogg', 50, TRUE)
+			playsound(src, 'sound/wod13/manhole.ogg', 50, TRUE)
 		else
 			climbing = FALSE
 	..()
@@ -103,7 +103,7 @@
 
 /obj/transfer_point_vamp/umbral/Bumped(atom/movable/AM)
 	. = ..()
-	playsound(get_turf(AM), 'code/modules/wod13/sounds/portal_enter.ogg', 75, FALSE)
+	playsound(get_turf(AM), 'sound/wod13/portal_enter.ogg', 75, FALSE)
 
 /obj/transfer_point_vamp/Bumped(atom/movable/AM)
 	. = ..()

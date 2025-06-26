@@ -14,7 +14,7 @@
 	name = "Dominate power name"
 	desc = "Dominate power description"
 
-	activate_sound = 'code/modules/wod13/sounds/dominate.ogg'
+	activate_sound = 'sound/wod13/dominate.ogg'
 
 /datum/discipline_power/dominate/activate(mob/living/target)
 	. = ..()

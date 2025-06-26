@@ -9,7 +9,7 @@
 	name = "Melpominee power name"
 	desc = "Melpominee power description"
 
-	activate_sound = 'code/modules/wod13/sounds/melpominee.ogg'
+	activate_sound = 'sound/wod13/melpominee.ogg'
 
 //THE MISSING VOICE
 /datum/discipline_power/melpominee/the_missing_voice
@@ -143,7 +143,7 @@
 	level = 4
 	check_flags = DISC_CHECK_CONSCIOUS | DISC_CHECK_CAPABLE | DISC_CHECK_IMMOBILE | DISC_CHECK_SPEAK
 
-	effect_sound = 'code/modules/wod13/sounds/killscream.ogg'
+	effect_sound = 'sound/wod13/killscream.ogg'
 
 	duration_length = 2 SECONDS
 	cooldown_length = 7.5 SECONDS
@@ -173,7 +173,7 @@
 	level = 5
 	check_flags = DISC_CHECK_CONSCIOUS | DISC_CHECK_CAPABLE | DISC_CHECK_IMMOBILE | DISC_CHECK_SPEAK
 
-	effect_sound = 'code/modules/wod13/sounds/killscream.ogg'
+	effect_sound = 'sound/wod13/killscream.ogg'
 
 	duration_length = 2 SECONDS
 	cooldown_length = 7.5 SECONDS

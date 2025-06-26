@@ -9,8 +9,8 @@
 	name = "Protean power name"
 	desc = "Protean power description"
 
-	activate_sound = 'code/modules/wod13/sounds/protean_activate.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/protean_deactivate.ogg'
+	activate_sound = 'sound/wod13/protean_activate.ogg'
+	deactivate_sound = 'sound/wod13/protean_deactivate.ogg'
 
 //EYES OF THE BEAST
 /datum/discipline_power/protean/eyes_of_the_beast

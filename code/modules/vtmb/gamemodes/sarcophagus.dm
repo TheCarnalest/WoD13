@@ -103,8 +103,8 @@ GLOBAL_LIST_INIT(caesar_cipher, list(
 			if(password == uppertext(pass))
 				icon_state = "b_sarcophagus-open1"
 				to_chat(world, "<span class='userdanger'><b>UNKNOWN SARCOPHAGUS HAS BEEN OPENED</b></span>")
-				SEND_SOUND(world, sound('code/modules/wod13/sounds/announce.ogg'))
-				playsound(get_turf(src), 'code/modules/wod13/sounds/mp_hello.ogg', 100, TRUE)
+				SEND_SOUND(world, sound('sound/wod13/announce.ogg'))
+				playsound(get_turf(src), 'sound/wod13/mp_hello.ogg', 100, TRUE)
 				spawn(200)
 					icon_state = "b_sarcophagus-open0"
 					new /mob/living/simple_animal/hostile/megafauna/wendigo(loc)
@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(caesar_cipher, list(
 	else
 		passkey = rand(-15, -5)
 	//to_chat(world, "<span class='userdanger'><b>UNKNOWN SARCOPHAGUS POSITION HAS BEEN LEAKED</b></span>")
-	SEND_SOUND(world, sound('code/modules/wod13/sounds/announce.ogg'))
+	SEND_SOUND(world, sound('sound/wod13/announce.ogg'))
 
 /obj/item/sarcophagus_key
 	name = "sarcophagus key"

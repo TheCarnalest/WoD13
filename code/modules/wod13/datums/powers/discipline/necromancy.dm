@@ -13,7 +13,7 @@
 	name = "Necromancy power name"
 	desc = "Necromancy power description"
 
-	activate_sound = 'code/modules/wod13/sounds/necromancy.ogg'
+	activate_sound = 'sound/wod13/necromancy.ogg'
 
 //SEAL OF ABAMIXTRA
 /datum/discipline_power/necromancy/seal_of_abamixtra

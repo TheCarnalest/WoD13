@@ -638,7 +638,7 @@
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	attack_verb_continuous = list("attacks", "chops", "rocks", "hits")
 	attack_verb_simple = list("attack", "chop", "rock", "hit")
-	hitsound = 'code/modules/wod13/sounds/rock.ogg'
+	hitsound = 'sound/wod13/rock.ogg'
 	sharpness = SHARP_EDGED
 	max_integrity = 200
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 30)
@@ -660,13 +660,13 @@
 	if(result)
 		last_solo = world.time
 		if(result == "1")
-			playsound(loc, 'code/modules/wod13/sounds/solo1.ogg', 100, FALSE)
+			playsound(loc, 'sound/wod13/solo1.ogg', 100, FALSE)
 		if(result == "2")
-			playsound(loc, 'code/modules/wod13/sounds/solo2.ogg', 100, FALSE)
+			playsound(loc, 'sound/wod13/solo2.ogg', 100, FALSE)
 		if(result == "3")
-			playsound(loc, 'code/modules/wod13/sounds/solo3.ogg', 100, FALSE)
+			playsound(loc, 'sound/wod13/solo3.ogg', 100, FALSE)
 		if(result == "4")
-			playsound(loc, 'code/modules/wod13/sounds/solo4.ogg', 100, FALSE)
+			playsound(loc, 'sound/wod13/solo4.ogg', 100, FALSE)
 
 /obj/item/melee/vampirearms/eguitar/Initialize(mapload)
 	. = ..()

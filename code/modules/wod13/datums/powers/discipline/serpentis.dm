@@ -9,7 +9,7 @@
 	name = "Serpentis power name"
 	desc = "Serpentis power description"
 
-	activate_sound = 'code/modules/wod13/sounds/serpentis.ogg'
+	activate_sound = 'sound/wod13/serpentis.ogg'
 
 //THE EYES OF THE SERPENT
 /datum/discipline_power/serpentis/the_eyes_of_the_serpent
@@ -75,7 +75,7 @@
 	target_type = TARGET_LIVING
 	range = 3
 
-	effect_sound = 'code/modules/wod13/sounds/tongue.ogg'
+	effect_sound = 'sound/wod13/tongue.ogg'
 	aggravating = TRUE
 	hostile = TRUE
 	violates_masquerade = TRUE

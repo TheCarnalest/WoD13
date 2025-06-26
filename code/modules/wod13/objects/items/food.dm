@@ -2,7 +2,7 @@
 	icon = 'code/modules/wod13/items.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	eatsound = 'code/modules/wod13/sounds/eat.ogg'
+	eatsound = 'sound/wod13/eat.ogg'
 	var/biten = FALSE
 
 /obj/item/food/vampire/proc/got_biten()
@@ -120,7 +120,7 @@
 	tastes = list("salt" = 1, "crisps" = 1)
 	food_flags = FOOD_IN_CONTAINER
 	foodtypes = JUNKFOOD | FRIED
-	eatsound = 'code/modules/wod13/sounds/crisp.ogg'
+	eatsound = 'sound/wod13/crisp.ogg'
 
 /obj/item/food/vampire/crisps/proc/open_crisps(mob/user)
 	to_chat(user, "<span class='notice'>You pull back the wrapper of \the [src].</span>")

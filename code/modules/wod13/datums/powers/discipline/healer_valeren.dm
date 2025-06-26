@@ -9,7 +9,7 @@
 	name = "Valeren power name"
 	desc = "Valeren power description"
 
-	activate_sound = 'code/modules/wod13/sounds/valeren.ogg'
+	activate_sound = 'sound/wod13/valeren.ogg'
 
 //SENSE VITALITY
 /datum/discipline_power/valeren/sense_vitality

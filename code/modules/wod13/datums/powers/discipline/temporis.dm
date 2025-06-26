@@ -9,7 +9,7 @@
 	name = "Temporis power name"
 	desc = "Temporis power description"
 
-	activate_sound = 'code/modules/wod13/sounds/temporis.ogg'
+	activate_sound = 'sound/wod13/temporis.ogg'
 
 /datum/discipline_power/temporis/proc/celerity_explode(datum/source, datum/discipline_power/power, atom/target)
 	SIGNAL_HANDLER

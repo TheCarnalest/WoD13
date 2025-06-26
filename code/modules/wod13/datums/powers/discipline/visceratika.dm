@@ -9,7 +9,7 @@
 	name = "Visceratika power name"
 	desc = "Visceratika power description"
 
-	activate_sound = 'code/modules/wod13/sounds/visceratika.ogg'
+	activate_sound = 'sound/wod13/visceratika.ogg'
 
 //WHISPERS OF THE CHAMBER
 /datum/discipline_power/visceratika/whispers_of_the_chamber

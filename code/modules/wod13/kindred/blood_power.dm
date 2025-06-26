@@ -29,7 +29,7 @@
 	var/cost = HAS_TRAIT(human_owner, TRAIT_HUNGRY) ? 3 : 2
 	if (human_owner.bloodpool < cost)
 		if (feedback)
-			SEND_SOUND(human_owner, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+			SEND_SOUND(human_owner, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 			owner.balloon_alert(owner, "not enough BLOOD!")
 		return FALSE
 
@@ -40,7 +40,7 @@
 
 	var/mob/living/carbon/human/human_owner = owner
 
-	playsound(usr, 'code/modules/wod13/sounds/bloodhealing.ogg', 50, FALSE)
+	playsound(usr, 'sound/wod13/bloodhealing.ogg', 50, FALSE)
 	to_chat(human_owner, span_notice("You use blood to become more powerful."))
 
 	for (var/obj/item/bodypart/limb in human_owner.bodyparts)

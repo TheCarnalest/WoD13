@@ -8,8 +8,8 @@
 	name = "Auspex power name"
 	desc = "Auspex power description"
 
-	activate_sound = 'code/modules/wod13/sounds/auspex.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/auspex_deactivate.ogg'
+	activate_sound = 'sound/wod13/auspex.ogg'
+	deactivate_sound = 'sound/wod13/auspex_deactivate.ogg'
 
 //HEIGHTENED SENSES
 /datum/discipline_power/auspex/heightened_senses

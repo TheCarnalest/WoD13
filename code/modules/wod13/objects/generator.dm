@@ -24,7 +24,7 @@
 			var/gas_to_transfer = min(1000-fuel_remain, min(100, max(1, G.stored_gasoline)))
 			G.stored_gasoline = max(0, G.stored_gasoline-gas_to_transfer)
 			fuel_remain = min(1000, fuel_remain+gas_to_transfer)
-			playsound(loc, 'code/modules/wod13/sounds/gas_fill.ogg', 25, TRUE)
+			playsound(loc, 'sound/wod13/gas_fill.ogg', 25, TRUE)
 			to_chat(user, "<span class='notice'>You transfer [gas_to_transfer] fuel to [src].</span>")
 		return
 
@@ -33,7 +33,7 @@
 	icon_state = "gen_off"
 	var/area/A = get_area(src)
 	for(var/mob/L in A)
-		SEND_SOUND(L, 'code/modules/wod13/sounds/fuck.ogg')
+		SEND_SOUND(L, 'sound/wod13/fuck.ogg')
 	A.requires_power = TRUE
 	A.fire_controled = FALSE
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
@@ -41,7 +41,7 @@
 	s.start()
 	for(var/obj/machinery/light/L in A)
 		L.update(FALSE)
-	playsound(loc, 'code/modules/wod13/sounds/explode.ogg', 100, TRUE)
+	playsound(loc, 'sound/wod13/explode.ogg', 100, TRUE)
 
 /obj/generator/attack_hand(mob/user)
 	if(fuel_remain == 0)
@@ -77,4 +77,4 @@
 	if(on)
 		if(last_sound_played+40 <= world.time)
 			last_sound_played = world.time
-			playsound(loc, 'code/modules/wod13/sounds/guh.ogg', 50, FALSE)
+			playsound(loc, 'sound/wod13/guh.ogg', 50, FALSE)

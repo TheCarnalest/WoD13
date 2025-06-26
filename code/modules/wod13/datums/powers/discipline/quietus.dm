@@ -9,7 +9,7 @@
 	name = "Quietus power name"
 	desc = "Quietus power description"
 
-	activate_sound = 'code/modules/wod13/sounds/quietus.ogg'
+	activate_sound = 'sound/wod13/quietus.ogg'
 
 //SILENCE OF DEATH
 /datum/discipline_power/quietus/silence_of_death
@@ -182,7 +182,7 @@
 	if(charges == 0)
 		qdel(src)
 /*
-	playsound(target.loc, 'code/modules/wod13/sounds/quietus.ogg', 50, TRUE)
+	playsound(target.loc, 'sound/wod13/quietus.ogg', 50, TRUE)
 	target.Stun(5*level_casting)
 	if(level_casting >= 3)
 		if(target.bloodpool > 1)

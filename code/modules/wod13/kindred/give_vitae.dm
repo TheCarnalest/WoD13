@@ -64,7 +64,7 @@
 									if (ROLL_FAILURE)
 										BLOODBONDED.visible_message("<span class='warning'>[BLOODBONDED.name] convulses in sheer agony!</span>")
 										BLOODBONDED.Shake(15, 15, 5 SECONDS)
-										playsound(BLOODBONDED.loc, 'code/modules/wod13/sounds/vicissitude.ogg', 100, TRUE)
+										playsound(BLOODBONDED.loc, 'sound/wod13/vicissitude.ogg', 100, TRUE)
 										BLOODBONDED.can_be_embraced = FALSE
 										return
 									if (ROLL_SUCCESS)

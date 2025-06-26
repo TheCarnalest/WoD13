@@ -9,7 +9,7 @@
 	name = "Mytherceria power name"
 	desc = "Mytherceria power description"
 
-	activate_sound = 'code/modules/wod13/sounds/kiasyd.ogg'
+	activate_sound = 'sound/wod13/kiasyd.ogg'
 
 //FEY SIGHT
 /datum/discipline_power/mytherceria/fey_sight
@@ -185,7 +185,7 @@
 	..()
 	if(isliving(AM) && owner)
 		if(AM != owner)
-			playsound(get_turf(src), 'code/modules/wod13/sounds/kiasyd.ogg', 100, FALSE)
+			playsound(get_turf(src), 'sound/wod13/kiasyd.ogg', 100, FALSE)
 			if(!unique)
 				var/mob/living/L = AM
 				var/atom/throw_target = get_edge_target_turf(AM, get_dir(src, AM))

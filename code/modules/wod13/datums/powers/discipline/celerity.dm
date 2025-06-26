@@ -8,8 +8,8 @@
 	name = "Celerity power name"
 	desc = "Celerity power description"
 
-	activate_sound = 'code/modules/wod13/sounds/celerity_activate.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/celerity_deactivate.ogg'
+	activate_sound = 'sound/wod13/celerity_activate.ogg'
+	deactivate_sound = 'sound/wod13/celerity_deactivate.ogg'
 
 /datum/discipline_power/celerity/proc/celerity_visual(datum/discipline_power/celerity/source, atom/newloc, dir)
 	SIGNAL_HANDLER

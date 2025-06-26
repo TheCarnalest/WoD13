@@ -3,7 +3,7 @@
 	icon = 'code/modules/wod13/48x32weapons.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	eatsound = 'code/modules/wod13/sounds/eat.ogg'
+	eatsound = 'sound/wod13/eat.ogg'
 	tastes = list("fish" = 1)
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/protein = 3)
 	foodtypes = RAW | MEAT
@@ -78,7 +78,7 @@
 		if(!catching)
 			catching = TRUE
 			user.isfishing = TRUE
-			playsound(loc, 'code/modules/wod13/sounds/catching.ogg', 50, FALSE)
+			playsound(loc, 'sound/wod13/catching.ogg', 50, FALSE)
 			if(do_mob(user, src, 15 SECONDS))
 				catching = FALSE
 				user.isfishing = FALSE
@@ -93,7 +93,7 @@
 				else
 					IT = /obj/item/food/fish/shark
 				new IT(user.loc)
-				playsound(loc, 'code/modules/wod13/sounds/catched.ogg', 50, FALSE)
+				playsound(loc, 'sound/wod13/catched.ogg', 50, FALSE)
 //					var/IT = pick(/obj/item/food/fish/shark,
 //									/obj/item/food/fish/tune,
 //									/obj/item/food/fish/catfish,

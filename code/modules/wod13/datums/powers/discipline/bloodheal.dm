@@ -12,7 +12,7 @@
 	name = "Bloodheal power name"
 	desc = "Bloodheal power description"
 
-	activate_sound = 'code/modules/wod13/sounds/bloodhealing.ogg'
+	activate_sound = 'sound/wod13/bloodhealing.ogg'
 
 	level = 1
 	check_flags = DISC_CHECK_TORPORED

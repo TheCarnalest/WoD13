@@ -51,7 +51,7 @@ SUBSYSTEM_DEF(zombiepool)
 	var/repairing = FALSE
 
 /obj/structure/vampgate/proc/punched()
-	playsound(get_turf(src), 'code/modules/wod13/sounds/get_bent.ogg', 100, FALSE)
+	playsound(get_turf(src), 'sound/wod13/get_bent.ogg', 100, FALSE)
 	pixel_z = pixel_z+rand(-1, 1)
 	pixel_w = pixel_w+rand(-1, 1)
 	punches_to_break = max(0, punches_to_break-1)
@@ -88,7 +88,7 @@ SUBSYSTEM_DEF(zombiepool)
 				if(punches_to_break)
 					density = TRUE
 					icon_state = "gate"
-				playsound(src, 'code/modules/wod13/sounds/repair.ogg', 50, TRUE)
+				playsound(src, 'sound/wod13/repair.ogg', 50, TRUE)
 				to_chat(user, "<span class='notice'>You repair some dents on [src].</span>")
 				repairing = FALSE
 			else

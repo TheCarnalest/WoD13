@@ -11,8 +11,8 @@
 	name = "Obfuscate power name"
 	desc = "Obfuscate power description"
 
-	activate_sound = 'code/modules/wod13/sounds/obfuscate_activate.ogg'
-	deactivate_sound = 'code/modules/wod13/sounds/obfuscate_deactivate.ogg'
+	activate_sound = 'sound/wod13/obfuscate_activate.ogg'
+	deactivate_sound = 'sound/wod13/obfuscate_deactivate.ogg'
 
 	var/static/list/aggressive_signals = list(
 		COMSIG_MOB_ATTACK_HAND,

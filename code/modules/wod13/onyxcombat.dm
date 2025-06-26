@@ -42,7 +42,7 @@
 
 		if(in_frenzy)
 			exit_frenzymod()
-		SEND_SOUND(src, sound('code/modules/wod13/sounds/final_death.ogg', 0, 0, 50))
+		SEND_SOUND(src, sound('sound/wod13/final_death.ogg', 0, 0, 50))
 
 		var/years_undead = chronological_age - age
 		switch (years_undead)
@@ -62,9 +62,9 @@
 				visible_message(span_warning("[src]'s body rapidly skeletonises!"))
 			if (200 to INFINITY) //turn to ash
 				if (iskindred(src))
-					playsound(src, 'code/modules/wod13/sounds/burning_death.ogg', 80, TRUE)
+					playsound(src, 'sound/wod13/burning_death.ogg', 80, TRUE)
 				else if (iscathayan(src))
-					playsound(src, 'code/modules/wod13/sounds/vicissitude.ogg', 80, TRUE)
+					playsound(src, 'sound/wod13/vicissitude.ogg', 80, TRUE)
 				lying_fix()
 				dir = SOUTH
 				INVOKE_ASYNC(src, TYPE_PROC_REF(/mob/living/carbon/human, dust), TRUE, TRUE)
@@ -119,7 +119,7 @@
 			user.apply_damage(10, STAMINA)
 		user.do_attack_animation(src)
 		visible_message("<span class='danger'>[src] parries the attack!</span>", "<span class='danger'>You parry the attack!</span>")
-		playsound(src, 'code/modules/wod13/sounds/parried.ogg', 70, TRUE)
+		playsound(src, 'sound/wod13/parried.ogg', 70, TRUE)
 		clear_parrying()
 		return
 	if(HAS_TRAIT(src, TRAIT_ENHANCED_MELEE_DODGE))
@@ -192,7 +192,7 @@
 		if(blocking)
 			SwitchBlocking()
 		visible_message("<span class='warning'>[src] prepares to parry [M]'s next attack.</span>", "<span class='warning'>You prepare to parry [M]'s next attack.</span>")
-		playsound(src, 'code/modules/wod13/sounds/parry.ogg', 70, TRUE)
+		playsound(src, 'sound/wod13/parry.ogg', 70, TRUE)
 		remove_overlay(FIGHT_LAYER)
 		var/mutable_appearance/parry_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "parry", -FIGHT_LAYER)
 		overlays_standing[FIGHT_LAYER] = parry_overlay
@@ -305,19 +305,19 @@
 				var/mob/living/carbon/human/PB = BD.pulling
 				if(isghoul(BD))
 					if(!iskindred(PB))
-						SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+						SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 						to_chat(BD, "<span class='warning'>Eww, that is <b>GROSS</b>.</span>")
 						return
 				if(!isghoul(BD) && !iskindred(BD) && !iscathayan(BD))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>Eww, that is <b>GROSS</b>.</span>")
 					return
 				if(PB.stat == DEAD && !HAS_TRAIT(BD, TRAIT_GULLET) && !iscathayan(BD))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>This creature is <b>DEAD</b>.</span>")
 					return
 				if(PB.bloodpool <= 0 && (!iskindred(BD.pulling) || !iskindred(BD)))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>There is no <b>BLOOD</b> in this creature.</span>")
 					return
 				if(BD.clan)
@@ -336,28 +336,28 @@
 				PB.add_bite_animation()
 			if(isliving(BD.pulling))
 				if(!iskindred(BD) && !iscathayan(BD))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>Eww, that is <b>GROSS</b>.</span>")
 					return
 				var/mob/living/LV = BD.pulling
 				if(LV.bloodpool <= 0 && (!iskindred(BD.pulling) || !iskindred(BD)))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>There is no <b>BLOOD</b> in this creature.</span>")
 					return
 				if(LV.stat == DEAD && !HAS_TRAIT(BD, TRAIT_GULLET) && !iscathayan(BD))
-					SEND_SOUND(BD, sound('code/modules/wod13/sounds/need_blood.ogg', 0, 0, 75))
+					SEND_SOUND(BD, sound('sound/wod13/need_blood.ogg', 0, 0, 75))
 					to_chat(BD, "<span class='warning'>This creature is <b>DEAD</b>.</span>")
 					return
 				var/skipface = (BD.wear_mask && (BD.wear_mask.flags_inv & HIDEFACE)) || (BD.head && (BD.head.flags_inv & HIDEFACE))
 				if(!skipface)
 					if(!HAS_TRAIT(BD, TRAIT_BLOODY_LOVER))
-						playsound(BD, 'code/modules/wod13/sounds/drinkblood1.ogg', 50, TRUE)
+						playsound(BD, 'sound/wod13/drinkblood1.ogg', 50, TRUE)
 						LV.visible_message("<span class='warning'><b>[BD] bites [LV]'s neck!</b></span>", "<span class='warning'><b>[BD] bites your neck!</b></span>")
 					if(!HAS_TRAIT(BD, TRAIT_BLOODY_LOVER))
 						if(BD.CheckEyewitness(LV, BD, 7, FALSE))
 							BD.AdjustMasquerade(-1)
 					else
-						playsound(BD, 'code/modules/wod13/sounds/kiss.ogg', 50, TRUE)
+						playsound(BD, 'sound/wod13/kiss.ogg', 50, TRUE)
 						LV.visible_message("<span class='italics'><b>[BD] kisses [LV]!</b></span>", "<span class='userlove'><b>[BD] kisses you!</b></span>")
 					if(iskindred(LV))
 						var/mob/living/carbon/human/HV = BD.pulling
@@ -479,10 +479,10 @@
 							for(var/turf/open/O in range(1, src))
 								if(prob(25))
 									new /obj/effect/temp_visual/desant(O)
-							playsound(loc, 'code/modules/wod13/sounds/helicopter.ogg', 50, TRUE)
+							playsound(loc, 'sound/wod13/helicopter.ogg', 50, TRUE)
 				if(last_showed+9000 < world.time)
 					to_chat(src, "<b>POLICE STOPPED SEARCHING</b>")
-					SEND_SOUND(src, sound('code/modules/wod13/sounds/humanity_gain.ogg', 0, 0, 75))
+					SEND_SOUND(src, sound('sound/wod13/humanity_gain.ogg', 0, 0, 75))
 					killed_count = 0
 					warrant = FALSE
 			else

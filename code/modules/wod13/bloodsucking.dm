@@ -27,7 +27,7 @@
 	suckbar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	if(client)
 		client.images += suckbar
-	var/sound/heartbeat = sound('code/modules/wod13/sounds/drinkblood2.ogg', repeat = TRUE)
+	var/sound/heartbeat = sound('sound/wod13/drinkblood2.ogg', repeat = TRUE)
 	if(HAS_TRAIT(src, TRAIT_BLOODY_SUCKER))
 		src.emote("moan")
 		Immobilize(30, TRUE)
@@ -113,7 +113,7 @@
 		if(HAS_TRAIT(src, TRAIT_FEEDING_RESTRICTION) && mob.bloodquality < BLOOD_QUALITY_NORMAL)	//Ventrue can suck on normal people, but not homeless people and animals. BLOOD_QUALITY_LOV - 1, BLOOD_QUALITY_NORMAL - 2, BLOOD_QUALITY_HIGH - 3. Blue blood gives +1 to suction
 			to_chat(src, "<span class='warning'>You are too privileged to drink that awful <b>BLOOD</b>. Go get something better.</span>")
 			visible_message("<span class='danger'>[src] throws up!</span>", "<span class='userdanger'>You throw up!</span>")
-			playsound(get_turf(src), 'code/modules/wod13/sounds/vomit.ogg', 75, TRUE)
+			playsound(get_turf(src), 'sound/wod13/vomit.ogg', 75, TRUE)
 			if(isturf(loc))
 				add_splatter_floor(loc)
 			stop_sound_channel(CHANNEL_BLOOD)
@@ -207,9 +207,9 @@
 						killed_count = killed_count+1
 						if(killed_count >= 5)
 //							GLOB.fuckers |= src
-							SEND_SOUND(src, sound('code/modules/wod13/sounds/humanity_loss.ogg', 0, 0, 75))
+							SEND_SOUND(src, sound('sound/wod13/humanity_loss.ogg', 0, 0, 75))
 							to_chat(src, "<span class='userdanger'><b>POLICE ASSAULT IN PROGRESS</b></span>")
-					SEND_SOUND(src, sound('code/modules/wod13/sounds/feed_failed.ogg', 0, 0, 75))
+					SEND_SOUND(src, sound('sound/wod13/feed_failed.ogg', 0, 0, 75))
 					to_chat(src, "<span class='warning'>This sad sacrifice for your own pleasure affects something deep in your mind.</span>")
 					AdjustMasquerade(-1)
 					AdjustHumanity(-1, 0)

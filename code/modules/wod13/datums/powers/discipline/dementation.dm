@@ -13,7 +13,7 @@
 	name = "Dementation power name"
 	desc = "Dementation power description"
 
-	activate_sound = 'code/modules/wod13/sounds/insanity.ogg'
+	activate_sound = 'sound/wod13/insanity.ogg'
 
 //PASSION
 /datum/discipline_power/dementation/passion

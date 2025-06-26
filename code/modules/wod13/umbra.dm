@@ -182,5 +182,5 @@
 		if (interacting_mob.client)
 			var/turf/T = get_step(exit, get_dir(interacting_mob, src))
 			interacting_mob.forceMove(T)
-			playsound(loc, 'code/modules/wod13/sounds/portal_enter.ogg', 75, FALSE)
-			playsound(T, 'code/modules/wod13/sounds/portal_enter.ogg', 75, FALSE)
+			playsound(loc, 'sound/wod13/portal_enter.ogg', 75, FALSE)
+			playsound(T, 'sound/wod13/portal_enter.ogg', 75, FALSE)
