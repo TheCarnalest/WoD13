@@ -143,7 +143,7 @@
 /obj/item/clothing/head/vampire/cowboy/armorless
 	name = "cowboy hat"
 	desc = "Yee, and I do not often say this, haw."
-	armor_type = null
+	armor_type = /datum/armor/none
 
 /obj/item/clothing/head/vampire/british
 	name = "british police hat"
@@ -155,13 +155,13 @@
 	name = "french admiral hat"
 	desc = "Dans mon esprit tout divague, je me perds dans tes yeux... Je me noie dans la vague de ton regard amoureux..."
 	icon_state = "french"
-	armor_type = null
+	armor_type = /datum/armor/none
 
 /obj/item/clothing/head/vampire/top
 	name = "top hat"
 	desc = "Want some tea? Provides some kind of protection."
 	icon_state = "top"
-	armor_type = null
+	armor_type = /datum/armor/none
 
 /obj/item/clothing/head/vampire/skull
 	name = "skull helmet"

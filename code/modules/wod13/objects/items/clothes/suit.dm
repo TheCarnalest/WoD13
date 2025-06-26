@@ -41,7 +41,6 @@
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	icon_state = "heisenberg"
-	inhand_icon_state = "heisenberg"
 	body_parts_covered = CHEST | GROIN | ARMS
 	cold_protection = CHEST | GROIN | ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -77,7 +76,6 @@
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
-	inhand_icon_state = "robes"
 	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	cold_protection = CHEST | GROIN | LEGS | ARMS
@@ -98,7 +96,6 @@
 	name = "black robe"
 	desc = "Some creepy-looking robes."
 	icon_state = "robes_black"
-	inhand_icon_state = "robes_black"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/black
 
 /obj/item/clothing/head/hooded/robes_hood/black
@@ -110,7 +107,6 @@
 	name = "grey robe"
 	desc = "Some somber-looking robes."
 	icon_state = "robes_grey"
-	inhand_icon_state = "robes_grey"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/grey
 
 /obj/item/clothing/head/hooded/robes_hood/grey
@@ -122,7 +118,6 @@
 	name = "dark red robe"
 	desc = "Some zealous-looking robes."
 	icon_state = "robes_darkred"
-	inhand_icon_state = "robes_darkred"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/darkred
 
 /obj/item/clothing/head/hooded/robes_hood/darkred
@@ -134,7 +129,6 @@
 	name = "yellow robe"
 	desc = "Some happy-looking robes."
 	icon_state = "robes_yellow"
-	inhand_icon_state = "robes_yellow"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/yellow
 
 /obj/item/clothing/head/hooded/robes_hood/yellow
@@ -146,7 +140,6 @@
 	name = "green robe"
 	desc = "Some earthy-looking robes."
 	icon_state = "robes_green"
-	inhand_icon_state = "robes_green"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/green
 
 /obj/item/clothing/head/hooded/robes_hood/green
@@ -158,7 +151,6 @@
 	name = "red robe"
 	desc = "Some furious-looking robes."
 	icon_state = "robes_red"
-	inhand_icon_state = "robes_red"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/red
 
 /obj/item/clothing/head/hooded/robes_hood/red
@@ -170,7 +162,6 @@
 	name = "purple robe"
 	desc = "Some elegant-looking robes."
 	icon_state = "robes_purple"
-	inhand_icon_state = "robes_purple"
 	hoodtype = /obj/item/clothing/head/hooded/robes_hood/purple
 
 /obj/item/clothing/head/hooded/robes_hood/purple

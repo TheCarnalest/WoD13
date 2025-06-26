@@ -1,18 +1,14 @@
 /obj/item/clothing/under/vampire
 	desc = "Some clothes."
 	name = "clothes"
-	icon_state = "error"
 	has_sensor = NO_SENSORS
 	random_sensor = FALSE
 	can_adjust = FALSE
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
-	armor_type = /datum/armor/vampire_clothes
+	armor_type = /datum/armor/clothing_under
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	female_sprite_flags = NO_FEMALE_UNIFORM
-
-/datum/armor/vampire_clothes
-	wound = 15
 
 /obj/item/clothing/under/vampire/Initialize(mapload)
 	. = ..()
@@ -350,7 +346,7 @@
 /obj/item/clothing/under/vampire/bogatyr/female
 	name = "blue skirt"
 	desc = "Some nice clothes."
-	icon_state = "bogatyr_f"
+	icon_state = "bogatyr"
 
 /obj/item/clothing/under/vampire/primogen_malkavian/female
 	name = "catsuit"
@@ -404,11 +400,6 @@
 	name = "Ardus Enterprises custodian jumpsuit"
 	desc = "An Ardus Enterprises custodian's uniform."
 	icon_state = "pentex_janitor"
-	armor_type = /datum/armor/pentex_janitor
-
-/datum/armor/pentex_janitor
-	bio = 100
-	acid = 15
 
 /obj/item/clothing/under/vampire/pentex_shortsleeve
 	name = "Endron polo-shirt"

@@ -8,7 +8,6 @@
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
-	inhand_icon_state = "fingerless"
 	undyeable = TRUE
 
 /obj/item/clothing/gloves/vampire/leather
@@ -21,8 +20,6 @@
 	armor_type = /datum/armor/leather_gloves
 
 /datum/armor/leather_gloves
-	melee = 15
-	bullet = 15
 	acid = 30
 
 /obj/item/clothing/gloves/vampire/work
@@ -37,9 +34,6 @@
 	armor_type = /datum/armor/work_gloves
 
 /datum/armor/work_gloves
-	melee = 30
-	bullet = 15
-	bomb = 10
 	fire = 70
 	acid = 30
 
@@ -55,9 +49,6 @@
 	armor_type = /datum/armor/investigator_gloves
 
 /datum/armor/investigator_gloves
-	melee = 30
-	bullet = 20
-	laser = 5
 	fire = 70
 	acid = 70
 

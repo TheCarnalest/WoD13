@@ -30,7 +30,7 @@
 	flags_inv = HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/clothing/mask/pentex/pentex_balaclava
+/obj/item/clothing/mask/vampire/pentex_balaclava
 	name = "Thick balaclava"
 	desc = "A black balaclava. This one is particularly thick."
 	icon_state = "pentex_balaclava"
@@ -41,7 +41,6 @@
 	name = "tragedy"
 	desc = "The Greek Tragedy mask."
 	icon_state = "tragedy"
-	inhand_icon_state = "tragedy"
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -49,7 +48,6 @@
 	name = "comedy"
 	desc = "The Greek Comedy mask."
 	icon_state = "comedy"
-	inhand_icon_state = "comedy"
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -57,7 +55,6 @@
 	name = "shemagh"
 	desc = "Covers your face pretty well."
 	icon_state = "shemagh"
-	inhand_icon_state = "shemagh"
 	flags_inv = HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -65,7 +62,6 @@
 	name = "Venetian mask"
 	desc = "You could wear this to a real masquerade."
 	icon_state = "venetian_mask"
-	inhand_icon_state = "venetian_mask"
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	flags_cover = MASKCOVERSMOUTH
 
@@ -73,19 +69,16 @@
 	name = "fancy Venetian mask"
 	desc = "Weird rich people definitely wear this kind of stuff."
 	icon_state = "venetian_mask_fancy"
-	inhand_icon_state = "venetian_mask_fancy"
 
 /obj/item/clothing/mask/vampire/venetian_mask/jester
 	name = "jester mask"
 	desc = "They will all be amused, every last one of them."
 	icon_state = "venetian_mask_jester"
-	inhand_icon_state = "venetian_mask_jester"
 
 /obj/item/clothing/mask/vampire/venetian_mask/scary
 	name = "bloody mask"
 	desc = "With this, you'll look ready to butcher someone."
 	icon_state = "venetian_mask_scary"
-	inhand_icon_state = "venetian_mask_scary"
 	flags_inv = HIDEFACE
 	flags_cover = NONE
 
