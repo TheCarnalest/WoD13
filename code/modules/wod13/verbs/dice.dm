@@ -156,7 +156,7 @@
 			return "⓿"
 
 
-/mob/proc/vampireroll(var/dices_num = 1, var/hardness = 1, var/atom/rollviewer)
+/mob/proc/vampireroll(dices_num = 1, hardness = 1, atom/rollviewer)
 	var/wins = 0
 	var/crits = 0
 	var/brokes = 0

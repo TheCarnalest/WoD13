@@ -32,7 +32,7 @@
 	qdel(sold)
 
 //This assumes that all items are of the same type
-/obj/lombard/proc/sell_multiple_items(var/list/items_to_sell, mob/living/user)
+/obj/lombard/proc/sell_multiple_items(list/items_to_sell, mob/living/user)
 	var/succeeded_sale
 	var/list/sold_items = list() //This will be returned at the end of the proc for use in lombard/MouseDrop_T()
 	for(var/obj/item/sold in items_to_sell)

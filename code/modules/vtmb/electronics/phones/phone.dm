@@ -355,9 +355,9 @@
 							GLOB.published_number_names += name
 							to_chat(usr, "<span class='notice'>Your number is now published.</span>")
 							for(var/obj/item/vamp/phone/PHN in GLOB.phones_list)
-							//Gather all the Phones in the game to check if they got the toggle for published contacts
+								//Gather all the Phones in the game to check if they got the toggle for published contacts
 								if(PHN.toggle_published_contacts == TRUE)
-							//If they got it, their published number will be added to those phones
+									//If they got it, their published number will be added to those phones
 									var/datum/phonecontact/NEWC = new()
 									var/p_number = src.number
 									NEWC.number = "[p_number]"
@@ -372,8 +372,8 @@
 												break
 										if(!GOT_CONTACT)
 											PHN.contacts += NEWC
-       					//to_chat(usr, "<span class='notice'>Published numbers: [GLOB.published_numbers]</span>")
-       					//to_chat(usr, "<span class='notice'>Published names: [GLOB.published_number_names]</span>")
+						//to_chat(usr, "<span class='notice'>Published numbers: [GLOB.published_numbers]</span>")
+						//to_chat(usr, "<span class='notice'>Published names: [GLOB.published_number_names]</span>")
 					else
 						to_chat(usr, "<span class='notice'>You must input a name to publish your number.</span>")
 

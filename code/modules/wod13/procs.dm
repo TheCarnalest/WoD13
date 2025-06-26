@@ -165,7 +165,7 @@
 		else
 			return ROLL_SUCCESS
 
-/proc/vampireroll(var/dices_num = 1, var/hardness = 1, var/atom/rollviewer)
+/proc/vampireroll(dices_num = 1, hardness = 1, atom/rollviewer)
 	var/wins = 0
 	var/crits = 0
 	var/brokes = 0
@@ -208,7 +208,7 @@
 				return DICE_WIN
 */
 
-/proc/get_vamp_skin_color(var/value = "albino")
+/proc/get_vamp_skin_color(value = "albino")
 	switch(value)
 		if("caucasian1")
 			return "vamp1"

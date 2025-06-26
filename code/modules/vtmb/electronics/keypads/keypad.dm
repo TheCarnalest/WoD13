@@ -18,6 +18,7 @@
 	var/y_pos = 0
 	var/pincode
 	var/id = 0
+
 /obj/keypad/proc/connect_to_shutter()
 	for(var/obj/machinery/door/poddoor/shutters/S in world)
 		if(S.id == id)
@@ -33,10 +34,10 @@
 	..()
 
 /proc/find_keypad(keypad_type)
-    for(var/obj/keypad/K in world)
-        if(istype(K, keypad_type))
-            return K
-    return null
+	for(var/obj/keypad/K in world)
+		if(istype(K, keypad_type))
+			return K
+	return null
 
 /obj/keypad/New()
 	..()

@@ -225,10 +225,10 @@
 	wound = 25
 
 /obj/item/clothing/head/vampire/hardhat
-    name = "construction helmet"
-    desc = "A thermoplastic hard helmet used to protect the head from injury."
-    icon_state = "hardhat"
-    armor_type = /datum/armor/construction_helmet
+	name = "construction helmet"
+	desc = "A thermoplastic hard helmet used to protect the head from injury."
+	icon_state = "hardhat"
+	armor_type = /datum/armor/construction_helmet
 
 /datum/armor/construction_helmet
 	melee = 20
