@@ -272,9 +272,9 @@
 	sleep(randomized_response_time)
 	for(var/obj/item/police_radio/radio in GLOB.police_radios)
 		radio.announce_crime("burglary", get_turf(src))
-	for(var/obj/machinery/p25transceiver/police/transciever in GLOB.p25_tranceivers)
-		if(transciever.p25_network == "police")
-			transciever.announce_crime("burglary", get_turf(src))
+	for(var/obj/machinery/p25transceiver/police/transceiver in GLOB.p25_tranceivers)
+		if(transceiver.p25_network == "police")
+			transceiver.announce_crime("burglary", get_turf(src))
 			break
 
 /obj/structure/vtm/dwelling_alarm/proc/alarm_trigger() //Starts the alarm for the house, calls cops

@@ -51,7 +51,7 @@
 				to_chat(user,span_notice("Only the original owner of the contract, [delivery.original_owner] can remove people from the contract."))
 				return
 			else
-				if(delivery.delivery_recievers.len == 0)
+				if(delivery.delivery_receivers.len == 0)
 					to_chat(user,span_warning("This delivery is complete and should be handed in. Removing users is no longer possibe."))
 					return
 				if(tgui_alert(user,"Do you want to remove [M] from the delivery contract?","Contract remove confirmation",list("Yes","No"),timeout = 10 SECONDS) == "Yes")
@@ -156,7 +156,7 @@
 							delivery_started = 1
 							return
 						if("fail_reci")
-							to_chat(user, span_warning("Not enough recievers avaialble in the game world. This is most likley because too many cotnracts are active at the same time, but is very likely a mapping bug."))
+							to_chat(user, span_warning("Not enough receivers avaialble in the game world. This is most likley because too many cotnracts are active at the same time, but is very likely a mapping bug."))
 							qdel(contract)
 						if("fail_garage")
 							to_chat(user, span_warning("No garage area found. This is a mapping bug and should be reported."))
@@ -182,7 +182,7 @@
 		if(contract_item.delivery.check_owner(user) == 0)
 			to_chat(user,span_warning("You don't seem to be on this contract. Only the person who signed the cotract can add you."))
 			return
-		if(contract_item.delivery.delivery_recievers.len == 0)
+		if(contract_item.delivery.delivery_receivers.len == 0)
 			if(get_area(contract_item.delivery.active_truck) != contract_item.delivery.garage_area)
 				to_chat(user,span_warning("Warning: Truck outside of garage area."))
 			if(tgui_alert(user,"Do you wish to finalize the contract?","Finalize Confirm",list("Yes","No"),timeout = 10 SECONDS) == "Yes")
@@ -210,7 +210,7 @@
 	. = ..()
 
 
-/obj/structure/delivery_reciever
+/obj/structure/delivery_receiver
 
 	name = "delivery chute"
 	desc = "A chute used to handle bulk deliveries. A standard shipping crate should slide right in."
@@ -220,7 +220,7 @@
 	icon_state = "box_put"
 	var/chute_name = "default"
 	var/delivery_in_use = 0
-	var/reciever_in_use = 0
+	var/receiver_in_use = 0
 	var/list/delivery_status = list(
 		"red" = 0,
 		"blue" = 0,
@@ -230,7 +230,7 @@
 	light_color = "#ffffff"
 	light_power = 2
 
-/obj/structure/delivery_reciever/proc/reset_reciever()
+/obj/structure/delivery_receiver/proc/reset_receiver()
 	delivery_in_use = 0
 	delivery_status = list(
 		"red" = 0,
@@ -242,46 +242,46 @@
 	mouse_opacity = 0
 	set_light(0)
 
-/obj/structure/delivery_reciever/proc/check_deliveries()
+/obj/structure/delivery_receiver/proc/check_deliveries()
 	if(delivery_status["red"] != 0 || delivery_status["blue"] != 0 || delivery_status["yellow"] != 0 || delivery_status["green"] != 0) return 0
 	return 1
 
-/obj/structure/delivery_reciever/Initialize(mapload)
+/obj/structure/delivery_receiver/Initialize(mapload)
 	. = ..()
 	alpha = 0
 	mouse_opacity = 0
-	GLOB.delivery_available_recievers.Add(src)
+	GLOB.delivery_available_receivers.Add(src)
 	name = "[initial(name)] - [capitalize(chute_name)]"
 
-/obj/structure/delivery_reciever/Destroy()
+/obj/structure/delivery_receiver/Destroy()
 	. = ..()
-	GLOB.delivery_available_recievers.Remove(src)
+	GLOB.delivery_available_receivers.Remove(src)
 
-/obj/structure/delivery_reciever/attack_hand(mob/living/user)
+/obj/structure/delivery_receiver/attack_hand(mob/living/user)
 	. = ..()
-	if(reciever_in_use == 1)
-		to_chat(user, span_warning("Someone is already operating this reciever!"))
+	if(receiver_in_use == 1)
+		to_chat(user, span_warning("Someone is already operating this receiver!"))
 	if(user.pulling)
 		if(delivery_in_use == 0) return
 		if(istype(user.pulling,/obj/structure/delivery_crate/))
 			var/obj/structure/delivery_crate/pulled_crate = user.pulling
 			if(pulled_crate.delivery.check_owner(user) == 0)
-				to_chat(user, span_warning("You aren't authorized to handle this delivery. For security reasons, the reciever denies the package."))
+				to_chat(user, span_warning("You aren't authorized to handle this delivery. For security reasons, the receiver denies the package."))
 				return
-			reciever_in_use = 1
+			receiver_in_use = 1
 			playsound(src,'sound/effects/cargocrate_move.ogg',50,10)
 			if(do_after(user, 2 SECONDS, src))
 				if(delivery_status[pulled_crate.crate_type] > 0)
 					delivery_status[pulled_crate.crate_type] -= 1
 					pulled_crate.delivery.delivery_score["delivered_crates"] += 1
 					if(check_deliveries() == 1)
-						pulled_crate.delivery.reciever_complete(src)
-						reset_reciever()
+						pulled_crate.delivery.receiver_complete(src)
+						reset_receiver()
 				else
 					pulled_crate.delivery.delivery_score["misdelivered_crates"] += 1
 				playsound(src,'sound/effects/cargocrate_load.ogg',50,10)
 				qdel(pulled_crate)
-			reciever_in_use = 0
+			receiver_in_use = 0
 
 /obj/structure/delivery_dispenser
 

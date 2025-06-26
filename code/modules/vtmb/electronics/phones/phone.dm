@@ -776,8 +776,8 @@
 	open_state = "redphone"
 	closed_state = "redphone"
 	folded_state = "redphone"
-	var/obj/machinery/p25transceiver/clinic_transciever
-	var/obj/machinery/p25transceiver/police_transciever
+	var/obj/machinery/p25transceiver/clinic_transceiver
+	var/obj/machinery/p25transceiver/police_transceiver
 
 /obj/item/vamp/phone/emergency/Initialize(mapload)
 	. = ..()

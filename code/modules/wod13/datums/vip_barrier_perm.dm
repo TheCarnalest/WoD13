@@ -1,5 +1,3 @@
-
-
 //Holds associated lists of walls and bouncers in a single permission network.
 /datum/vip_barrier_perm
 	var/name
@@ -16,9 +14,8 @@
 	var/list/block_list = list("Unknown")
 
 
-/datum/vip_barrier_perm/New(var/protected_zone_id)
+/datum/vip_barrier_perm/New(protected_zone_id)
 	name = protected_zone_id
-
 
 //registers bouncer with the perms
 /datum/vip_barrier_perm/proc/add_bouncer(target_bouncer)

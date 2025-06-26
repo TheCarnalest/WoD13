@@ -1,4 +1,4 @@
-import { FeatureChoiced } from "../base";
+import { FeatureChoiced } from '../base';
 import { FeatureDropdownInput } from '../dropdowns';
 
 export const vtm_morality_path: FeatureChoiced = {
