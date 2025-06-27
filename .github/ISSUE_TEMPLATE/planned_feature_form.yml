@@ -27,7 +27,6 @@ body:
       label: "Prerequisites:"
       description: |
         Other planned features that must be implemented before this feature can be implemented.
-      placeholder: "#1"
     validations:
       required: false
   - type: textarea
