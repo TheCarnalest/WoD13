@@ -748,7 +748,10 @@
  * polling ghosts while it's just being equipped as a visual preview for a dummy.
  */
 /obj/item/proc/visual_equipped(mob/user, slot, initial = FALSE)
-	return
+	// Start WoD13 Modification
+	SEND_SIGNAL(src, COMSIG_ITEM_VISUAL_EQUIPPED, user, slot)
+	SEND_SIGNAL(user, COMSIG_MOB_VISUAL_EQUIPPED_ITEM, src, slot)
+	// End WoD13 Modification
 
 /**
  * Called by on_equipped. Don't call this directly, we want the ITEM_POST_EQUIPPED signal to be sent after everything else.

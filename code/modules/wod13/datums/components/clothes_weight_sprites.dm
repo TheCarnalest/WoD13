@@ -16,7 +16,7 @@
 	for (var/obj/item/equipped_item in human_parent.get_equipped_items())
 		apply_weight_icon(equipped_item)
 
-	RegisterSignal(parent, COMSIG_MOB_EQUIPPED_ITEM, PROC_REF(handle_equipped_item))
+	RegisterSignal(parent, COMSIG_MOB_VISUAL_EQUIPPED_ITEM, PROC_REF(handle_equipped_item))
 	RegisterSignal(parent, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(handle_unequipped_item))
 
 /datum/component/clothes_weight_sprites/UnregisterFromParent()
@@ -26,7 +26,7 @@
 	for (var/obj/item/equipped_item in human_parent.get_equipped_items())
 		clear_weight_icon(equipped_item)
 
-	UnregisterSignal(parent, COMSIG_MOB_EQUIPPED_ITEM)
+	UnregisterSignal(parent, COMSIG_MOB_VISUAL_EQUIPPED_ITEM)
 	UnregisterSignal(parent, COMSIG_MOB_UNEQUIPPED_ITEM)
 
 /datum/component/clothes_weight_sprites/proc/handle_equipped_item(mob/living/source, obj/item/equipped_item, slot)
