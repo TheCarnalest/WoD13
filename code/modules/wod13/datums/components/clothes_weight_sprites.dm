@@ -45,10 +45,12 @@
 
 	equipped_item.worn_icon = clothes_weight_icon
 	equipped_item.update_icon()
+	equipped_item.update_slot_icon()
 
 /datum/component/clothes_weight_sprites/proc/clear_weight_icon(obj/item/unequipped_item)
 	unequipped_item.worn_icon = initial(unequipped_item.worn_icon)
 	unequipped_item.update_icon()
+	unequipped_item.update_slot_icon()
 
 
 
