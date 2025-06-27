@@ -137,7 +137,7 @@
 	if (!istype(organ, /obj/item/organ/heart))
 		return
 
-	addtimer(CALLBACK(src, PROC_REF(lose_heart), source, organ), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(lose_heart), source, organ), 1 SECONDS)
 
 /datum/species/human/kindred/proc/lose_heart(mob/living/carbon/human/source, obj/item/organ/heart/heart)
 	if (source.get_organ_by_type(/obj/item/organ/heart))
