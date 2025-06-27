@@ -2,7 +2,7 @@
 	name = "Sewer"
 	icon_state = "sewer"
 	ambience_index = AMBIENCE_SEWER
-	ambient_buzz = 'sound/wod13/enterlair.ogg'
+	ambient_buzz = 'sound/wod13/ambience/enterlair.ogg'
 	upper = FALSE
 	zone_type = ZONE_NO_MASQUERADE
 	yang_chi = 0
@@ -13,7 +13,7 @@
 	name = "Underground Town"
 	icon_state = "hotel"
 	upper = FALSE
-	ambient_buzz = 'sound/wod13/nosferatu.ogg'
+	ambient_buzz = 'sound/wod13/ambience/nosferatu.ogg'
 	zone_type = "elysium"
 	yang_chi = 0
 	yin_chi = 2
@@ -23,5 +23,5 @@
 	name = "Old Clan Tzimisce Sanctum"
 	icon_state = "old_clan_sanctum"
 	zone_type = "elysium"
-	ambient_buzz = 'sound/wod13/nosferatu.ogg'
+	ambient_buzz = 'sound/wod13/ambience/nosferatu.ogg'
 	wall_rating = HIGH_WALL_RATING

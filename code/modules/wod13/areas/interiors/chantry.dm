@@ -1,7 +1,7 @@
 /area/vtm/interior/theatre
 	name = "Theatre"
 	icon_state = "theatre"
-	ambient_buzz = 'sound/wod13/theatre.ogg'
+	ambient_buzz = 'sound/wod13/ambience/theatre.ogg'
 	zone_type = "elysium"
 	fire_controled = TRUE
 
