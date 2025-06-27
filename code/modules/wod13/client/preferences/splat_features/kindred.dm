@@ -15,8 +15,6 @@
 	return uni_icon('icons/wod13/ui_icons/vampire_clans.dmi', get_vampire_clan(value).id)
 
 /datum/preference/choiced/vampire_clan/apply_to_human(mob/living/carbon/human/target, value)
-	PREFERENCE_MUST_BE_ACCESSIBLE
-
 	target.set_clan(value, TRUE)
 
 /datum/preference/choiced/vtm_morality
@@ -35,8 +33,6 @@
 	return list("Humanity", "Enlightenment")
 
 /datum/preference/choiced/vtm_morality/apply_to_human(mob/living/carbon/human/target, value)
-	PREFERENCE_MUST_BE_ACCESSIBLE
-
 	if (!iskindred(target))
 		return
 	if (value != "Enlightenment")
