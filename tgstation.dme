@@ -420,6 +420,7 @@
 #include "code\__DEFINES\wod13\discipline.dm"
 #include "code\__DEFINES\wod13\lockpick_difficulty.dm"
 #include "code\__DEFINES\wod13\mobs.dm"
+#include "code\__DEFINES\wod13\preferences.dm"
 #include "code\__DEFINES\wod13\signals_kindred.dm"
 #include "code\__DEFINES\wod13\sound.dm"
 #include "code\__DEFINES\wod13\status_effects_debuffs.dm"
