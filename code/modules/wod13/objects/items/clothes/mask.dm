@@ -4,9 +4,9 @@
 	icon_state = "respirator"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	flags_inv = HIDEFACE | HIDEFACIALHAIR|HIDESNOUT
-	icon = 'code/modules/wod13/clothing.dmi'
-	worn_icon = 'code/modules/wod13/worn.dmi'
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	icon = 'icons/wod13/clothing.dmi'
+	worn_icon = 'icons/wod13/worn.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	inhand_icon_state = ""
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_cover = MASKCOVERSMOUTH | PEPPERPROOF
@@ -14,9 +14,9 @@
 
 /obj/item/clothing/mask/vampire
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
-	icon = 'code/modules/wod13/clothing.dmi'
-	worn_icon = 'code/modules/wod13/worn.dmi'
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	icon = 'icons/wod13/clothing.dmi'
+	worn_icon = 'icons/wod13/worn.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	inhand_icon_state = ""
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_cover = MASKCOVERSMOUTH

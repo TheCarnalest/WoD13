@@ -5,9 +5,9 @@
 //GLOVES
 
 /obj/item/clothing/gloves/vampire
-	icon = 'code/modules/wod13/clothing.dmi'
-	worn_icon = 'code/modules/wod13/worn.dmi'
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	icon = 'icons/wod13/clothing.dmi'
+	worn_icon = 'icons/wod13/worn.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	undyeable = TRUE
 
 /obj/item/clothing/gloves/vampire/leather

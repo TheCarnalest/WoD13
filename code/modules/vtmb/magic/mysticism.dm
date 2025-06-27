@@ -2,8 +2,8 @@
 	name = "mystic tome"
 	desc = "The secrets of Abyss Mysticism..."
 	icon_state = "mystic"
-	icon = 'code/modules/wod13/items.dmi'
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	icon = 'icons/wod13/items.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	var/list/rituals = list()
 
@@ -28,7 +28,7 @@
 /obj/abyssrune
 	name = "Lasombra Rune"
 	desc = "Learn the secrets of the Abyss, neonate..."
-	icon = 'code/modules/wod13/icons.dmi'
+	icon = 'icons/wod13/icons.dmi'
 	icon_state = "rune1"
 	color = rgb(0,0,0)
 	anchored = TRUE

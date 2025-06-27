@@ -1,10 +1,10 @@
 /datum/action/discipline
 	check_flags = NONE
-	background_icon = 'code/modules/wod13/UI/actions.dmi' //This is the file for the ACTION icon
+	background_icon = 'icons/wod13/UI/actions.dmi' //This is the file for the ACTION icon
 	background_icon_state = "discipline" //And this is the state for the background icon
-	button_icon = 'code/modules/wod13/UI/actions.dmi' //This is the file for the BACKGROUND icon
+	button_icon = 'icons/wod13/UI/actions.dmi' //This is the file for the BACKGROUND icon
 	button_icon_state = "discipline" //And this is the state for the action icon
-	overlay_icon = 'code/modules/wod13/UI/actions.dmi'
+	overlay_icon = 'icons/wod13/UI/actions.dmi'
 
 	vampiric = TRUE
 	var/datum/discipline/discipline

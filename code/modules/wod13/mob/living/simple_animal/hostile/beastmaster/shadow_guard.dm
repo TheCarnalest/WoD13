@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/beastmaster/shadow_guard
 	name = "shadow abomination"
 	desc = "A shadow given life, creature of fathomless..."
-	icon = 'code/modules/wod13/mobs.dmi'
+	icon = 'icons/wod13/mobs.dmi'
 	icon_state = "shadow2"
 	icon_living = "shadow2"
 	del_on_death = 1

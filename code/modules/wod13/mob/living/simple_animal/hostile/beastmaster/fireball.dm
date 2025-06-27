@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/beastmaster/fireball
 	name = "fireball"
 	desc = "FIREBALL!!"
-	icon = 'code/modules/wod13/mobs.dmi'
+	icon = 'icons/wod13/mobs.dmi'
 	icon_state = "fireball"
 	icon_living = "fireball"
 	del_on_death = TRUE

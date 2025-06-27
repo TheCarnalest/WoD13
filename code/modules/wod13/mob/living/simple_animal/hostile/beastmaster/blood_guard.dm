@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/beastmaster/blood_guard
 	name = "blood guardian"
 	desc = "A clot of blood in humanoid form."
-	icon = 'code/modules/wod13/mobs.dmi'
+	icon = 'icons/wod13/mobs.dmi'
 	icon_state = "blood_guardian"
 	icon_living = "blood_guardian"
 	del_on_death = 1

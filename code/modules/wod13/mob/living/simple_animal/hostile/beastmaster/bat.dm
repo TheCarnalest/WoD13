@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/beastmaster/rat/flying
-	icon = 'code/modules/wod13/mobs.dmi'
+	icon = 'icons/wod13/mobs.dmi'
 	icon_state = "bat"
 	icon_living = "bat"
 	icon_dead = "bat_dead"

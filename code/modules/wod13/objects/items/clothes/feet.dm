@@ -7,11 +7,11 @@
 /obj/item/clothing/shoes/vampire
 	name = "shoes"
 	desc = "Comfortable-looking shoes."
-	icon = 'code/modules/wod13/clothing.dmi'
-	worn_icon = 'code/modules/wod13/worn.dmi'
+	icon = 'icons/wod13/clothing.dmi'
+	worn_icon = 'icons/wod13/worn.dmi'
 	icon_state = "shoes"
 	gender = PLURAL
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 
 /obj/item/clothing/shoes/vampire/Initialize(mapload)
 	. = ..()

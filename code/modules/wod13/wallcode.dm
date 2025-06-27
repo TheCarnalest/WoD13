@@ -3,7 +3,7 @@
 /obj/effect/addwall
 	name = "Debug"
 	desc = "First rule of debug placeholder: Do not talk about debug placeholder."
-	icon = 'code/modules/wod13/addwalls.dmi'
+	icon = 'icons/wod13/addwalls.dmi'
 	base_icon_state = "wall"
 	plane = GAME_PLANE
 	layer = ABOVE_ALL_MOB_LAYERS_LAYER
@@ -36,7 +36,7 @@
 /turf/closed/wall/vampwall
 	name = "old brick wall"
 	desc = "A huge chunk of old bricks used to separate rooms."
-	icon = 'code/modules/wod13/walls.dmi'
+	icon = 'icons/wod13/walls.dmi'
 	icon_state = "wall-0"
 	base_icon_state = "wall"
 	opacity = TRUE
@@ -111,7 +111,7 @@
 		qdel(addwall)
 
 /turf/closed/wall/vampwall/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE //Let the windows block the air transfer
@@ -127,7 +127,7 @@
 	base_icon_state = "rich"
 
 /turf/closed/wall/vampwall/rich/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -147,7 +147,7 @@
 	base_icon_state = "junk"
 
 /turf/closed/wall/vampwall/junk/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -161,7 +161,7 @@
 	base_icon_state = "junkalt"
 
 /turf/closed/wall/vampwall/junk/alt/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -177,7 +177,7 @@
 	base_icon_state = "market"
 
 /turf/closed/wall/vampwall/market/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -197,7 +197,7 @@
 	base_icon_state = "old"
 
 /turf/closed/wall/vampwall/old/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -217,7 +217,7 @@
 	base_icon_state = "painted"
 
 /turf/closed/wall/vampwall/painted/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -237,7 +237,7 @@
 	base_icon_state = "theater"
 
 /turf/closed/wall/vampwall/rich/old/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -257,7 +257,7 @@
 	base_icon_state = "brick"
 
 /turf/closed/wall/vampwall/brick/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -279,7 +279,7 @@
 	base_icon_state = "city"
 
 /turf/closed/wall/vampwall/city/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -320,7 +320,7 @@
 	base_icon_state = "bar"
 
 /turf/closed/wall/vampwall/bar/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -336,7 +336,7 @@
 	base_icon_state = "wood"
 
 /turf/closed/wall/vampwall/wood/low
-	icon = 'code/modules/wod13/lowwalls.dmi'
+	icon = 'icons/wod13/lowwalls.dmi'
 	opacity = FALSE
 	low = TRUE
 	blocks_air = FALSE
@@ -379,7 +379,7 @@
 
 /obj/effect/decal/asphalt
 	name = "asphalt"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "decal1"
 	mouse_opacity = 0
 
@@ -395,14 +395,14 @@
 
 /obj/effect/decal/snow_overlay
 	name = "snow"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "snow_overlay"
 	alpha = 200
 	mouse_opacity = 0
 
 /obj/effect/decal/asphaltline
 	name = "asphalt"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "line"
 	mouse_opacity = 0
 
@@ -421,7 +421,7 @@
 
 /obj/effect/decal/crosswalk
 	name = "asphalt"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "crosswalk1"
 	mouse_opacity = 0
 
@@ -438,7 +438,7 @@
 /turf/open/floor/plating/asphalt
 	gender = PLURAL
 	name = "asphalt"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "asphalt1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -474,14 +474,14 @@
 
 /obj/effect/decal/stock
 	name = "stock"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "stock"
 	mouse_opacity = 0
 
 /turf/open/floor/plating/sidewalkalt
 	gender = PLURAL
 	name = "sidewalk"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "sidewalk_alt"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -506,7 +506,7 @@
 /turf/open/floor/plating/sidewalk
 	gender = PLURAL
 	name = "sidewalk"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "sidewalk1"
 	var/number_of_variations = 3
 	var/based_icon_state = "sidewalk"
@@ -549,7 +549,7 @@
 /turf/open/floor/plating/roofwalk
 	gender = PLURAL
 	name = "roof"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "roof"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -580,7 +580,7 @@
 
 /obj/effect/decal/bordur
 	name = "sidewalk"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "border"
 	mouse_opacity = 0
 
@@ -604,7 +604,7 @@
 /turf/open/floor/plating/parquetry
 	gender = PLURAL
 	name = "parquetry"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "parquet"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -623,7 +623,7 @@
 /turf/open/floor/plating/granite
 	gender = PLURAL
 	name = "granite"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "granite"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -639,7 +639,7 @@
 /turf/open/floor/plating/concrete
 	gender = PLURAL
 	name = "concrete"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "concrete1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -656,7 +656,7 @@
 /turf/open/floor/plating/vampgrass
 	gender = PLURAL
 	name = "grass"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "grass1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -722,7 +722,7 @@
 /turf/open/floor/plating/vampcarpet
 	gender = PLURAL
 	name = "carpet"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "carpet_black"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -735,7 +735,7 @@
 /turf/open/floor/plating/vampdirt
 	gender = PLURAL
 	name = "dirt"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "dirt"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -815,7 +815,7 @@
 /turf/open/floor/plating/vampplating
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "plating"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -834,7 +834,7 @@
 /turf/open/floor/plating/rough
 	gender = PLURAL
 	name = "rough floor"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "rough"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -854,7 +854,7 @@
 /turf/open/floor/plating/stone
 	gender = PLURAL
 	name = "rough floor"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "stone"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -874,7 +874,7 @@
 /turf/open/floor/plating/toilet
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "toilet1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -891,7 +891,7 @@
 /turf/open/floor/plating/circled
 	gender = PLURAL
 	name = "fancy plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "circle1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -908,7 +908,7 @@
 /turf/open/floor/plating/church
 	gender = PLURAL
 	name = "fancy plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "church1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -925,7 +925,7 @@
 /turf/open/floor/plating/saint
 	gender = PLURAL
 	name = "fancy plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "saint1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -943,7 +943,7 @@
 
 /obj/effect/decal/wallpaper
 	name = "wall paint"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "wallpaper"
 	plane = GAME_PLANE
 	layer = ABOVE_NORMAL_TURF_LAYER	//WALLPAPER_LAYER dont work
@@ -1038,7 +1038,7 @@
 /turf/open/floor/plating/vampwood
 	gender = PLURAL
 	name = "wood"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "bwood"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1064,7 +1064,7 @@
 /turf/open/floor/plating/vampbeach
 	gender = PLURAL
 	name = "sand"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "sand1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1125,7 +1125,7 @@
 /turf/open/floor/plating/vampocean
 	gender = PLURAL
 	name = "water"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "ocean"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1143,7 +1143,7 @@
 /turf/open/floor/plating/vampacid
 	gender = PLURAL
 	name = "goop"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "acid"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1175,7 +1175,7 @@
 
 /obj/effect/decal/coastline
 	name = "water"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "coastline"
 
 /obj/effect/decal/coastline/corner
@@ -1183,7 +1183,7 @@
 
 /obj/effect/decal/shadow
 	name = "shadow"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "shadow"
 
 /obj/effect/decal/shadow/Initialize(mapload)
@@ -1194,13 +1194,13 @@
 
 /obj/effect/decal/support
 	name = "support"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "support"
 
 /turf/open/floor/plating/shit
 	gender = PLURAL
 	name = "sewage"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "shit"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1223,7 +1223,7 @@
 /turf/open/floor/plating/vampcanal
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "canal1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1246,7 +1246,7 @@
 /turf/open/floor/plating/vampcanalplating
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "canal_plating1"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1269,13 +1269,13 @@
 /turf/closed/indestructible/elevatorshaft
 	name = "elevator shaft"
 	desc = "Floors, floors, floors..."
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "black"
 
 /turf/open/floor/plating/bacotell
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "bacotell"
 	flags_1 = NONE
 	attachment_holes = FALSE
@@ -1288,7 +1288,7 @@
 /turf/open/floor/plating/gummaguts
 	gender = PLURAL
 	name = "plating"
-	icon = 'code/modules/wod13/tiles.dmi'
+	icon = 'icons/wod13/tiles.dmi'
 	icon_state = "gummaguts"
 	flags_1 = NONE
 	attachment_holes = FALSE

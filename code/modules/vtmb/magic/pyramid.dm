@@ -2,8 +2,8 @@
 	name = "arcane tome"
 	desc = "The secrets of Blood Magic..."
 	icon_state = "arcane"
-	icon = 'code/modules/wod13/items.dmi'
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	icon = 'icons/wod13/items.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	is_magic = TRUE
 	var/list/rituals = list()
@@ -38,7 +38,7 @@
 /obj/ritualrune
 	name = "Tremere Rune"
 	desc = "Learn the secrets of blood, neonate..."
-	icon = 'code/modules/wod13/icons.dmi'
+	icon = 'icons/wod13/icons.dmi'
 	icon_state = "rune1"
 	color = rgb(128,0,0)
 	anchored = TRUE
@@ -158,7 +158,7 @@
 /obj/structure/bloodwall
 	name = "blood wall"
 	desc = "Wall from BLOOD."
-	icon = 'code/modules/wod13/icons.dmi'
+	icon = 'icons/wod13/icons.dmi'
 	icon_state = "bloodwall"
 	plane = GAME_PLANE
 	layer = ABOVE_MOB_LAYER
@@ -170,7 +170,7 @@
 /obj/structure/fleshwall
 	name = "flesh wall"
 	desc = "Wall from FLESH."
-	icon = 'code/modules/wod13/icons.dmi'
+	icon = 'icons/wod13/icons.dmi'
 	icon_state = "fleshwall"
 	plane = GAME_PLANE
 	layer = ABOVE_MOB_LAYER

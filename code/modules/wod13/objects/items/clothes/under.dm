@@ -4,10 +4,10 @@
 	has_sensor = NO_SENSORS
 	random_sensor = FALSE
 	can_adjust = FALSE
-	icon = 'code/modules/wod13/clothing.dmi'
-	worn_icon = 'code/modules/wod13/worn.dmi'
+	icon = 'icons/wod13/clothing.dmi'
+	worn_icon = 'icons/wod13/worn.dmi'
 	armor_type = /datum/armor/clothing_under
-	onflooricon = 'code/modules/wod13/onfloor.dmi'
+	onflooricon = 'icons/wod13/onfloor.dmi'
 	female_sprite_flags = NO_FEMALE_UNIFORM
 
 /obj/item/clothing/under/vampire/Initialize(mapload)

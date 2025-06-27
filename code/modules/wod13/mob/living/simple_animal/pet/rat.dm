@@ -1,7 +1,7 @@
 /mob/living/simple_animal/pet/rat
 	name = "rat"
 	desc = "It's a rat."
-	icon = 'code/modules/wod13/icons.dmi'
+	icon = 'icons/wod13/icons.dmi'
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat_dead"

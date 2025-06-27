@@ -41,7 +41,7 @@
 /datum/discipline_power/dementation/passion/activate(mob/living/carbon/human/target)
 	. = ..()
 	target.remove_overlay(MUTATIONS_LAYER)
-	var/mutable_appearance/dementation_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
+	var/mutable_appearance/dementation_overlay = mutable_appearance('icons/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
 	dementation_overlay.pixel_z = 1
 	//what the fuck
 	target.overlays_standing[MUTATIONS_LAYER] = dementation_overlay
@@ -84,7 +84,7 @@
 /datum/discipline_power/dementation/the_haunting/activate(mob/living/carbon/human/target)
 	. = ..()
 	target.remove_overlay(MUTATIONS_LAYER)
-	var/mutable_appearance/dementation_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
+	var/mutable_appearance/dementation_overlay = mutable_appearance('icons/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
 	dementation_overlay.pixel_z = 1
 	//what the fuck
 	target.overlays_standing[MUTATIONS_LAYER] = dementation_overlay
@@ -123,7 +123,7 @@
 /datum/discipline_power/dementation/eyes_of_chaos/activate(mob/living/carbon/human/target)
 	. = ..()
 	target.remove_overlay(MUTATIONS_LAYER)
-	var/mutable_appearance/dementation_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
+	var/mutable_appearance/dementation_overlay = mutable_appearance('icons/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
 	dementation_overlay.pixel_z = 1
 	//what the fuck
 	target.overlays_standing[MUTATIONS_LAYER] = dementation_overlay
@@ -256,7 +256,7 @@
 /datum/discipline_power/dementation/voice_of_madness/activate(mob/living/carbon/human/target)
 	. = ..()
 	target.remove_overlay(MUTATIONS_LAYER)
-	var/mutable_appearance/dementation_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
+	var/mutable_appearance/dementation_overlay = mutable_appearance('icons/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
 	dementation_overlay.pixel_z = 1
 	//what the fuck
 	target.overlays_standing[MUTATIONS_LAYER] = dementation_overlay
@@ -295,7 +295,7 @@
 /datum/discipline_power/dementation/total_insanity/activate(mob/living/carbon/human/target)
 	. = ..()
 	target.remove_overlay(MUTATIONS_LAYER)
-	var/mutable_appearance/dementation_overlay = mutable_appearance('code/modules/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
+	var/mutable_appearance/dementation_overlay = mutable_appearance('icons/wod13/icons.dmi', "dementation", -MUTATIONS_LAYER)
 	dementation_overlay.pixel_z = 1
 	//what the fuck
 	target.overlays_standing[MUTATIONS_LAYER] = dementation_overlay
