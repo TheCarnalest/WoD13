@@ -3,7 +3,12 @@
 /obj/effect/landmark/npc_spawn_point/Initialize(mapload)
 	. = ..()
 
-	GLOB.npc_spawn_points |= src
+	GLOB.npc_spawn_points += src
+
+/obj/effect/landmark/npc_spawn_point/Destroy()
+	GLOB.npc_spawn_points -= src
+
+	. = ..()
 
 /obj/effect/landmark/npcbeacon
 	name = "NPC beacon"
