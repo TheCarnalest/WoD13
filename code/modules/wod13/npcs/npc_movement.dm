@@ -11,6 +11,7 @@
 
 /obj/effect/landmark/npcbeacon/directed
 	name = "NPC traffic"
+	icon = 'icons/wod13/effects/landmarks_static.dmi'
 	icon_state = "npc"
 
 /obj/effect/landmark/npcbeacon/directed/Initialize(mapload)
@@ -24,10 +25,12 @@
 
 /obj/effect/landmark/npcactivity
 	name = "NPC Activity"
+	icon = 'icons/wod13/effects/landmarks_static.dmi'
 	icon_state = "bullets"
 
 /obj/effect/landmark/npcability
 	name = "NPC Ability"
+	icon = 'icons/wod13/effects/landmarks_static.dmi'
 	icon_state = "ability"
 
 /obj/effect/landmark/npcactivity/Initialize(mapload)
