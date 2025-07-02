@@ -2,7 +2,7 @@
 #define POLICE_TYPE_NPC /mob/living/carbon/human/npc/police
 
 /mob/living/carbon/human/npc
-	name = "Loh ebanii"
+	name = "NPC"
 
 	// NPCs normally walk around slowly
 	move_intent = MOVE_INTENT_WALK
@@ -14,6 +14,8 @@
 	/// my_backup_weapon = type_path
 	/// This only determines my_weapon, you set my_backup_weapon yourself
 	/// The last entry in the list for a type of NPC should always have 100 as the index
+	// TODO: [Lucia] reimplement weapons
+	/*
 	var/static/list/role_weapons_chances = list(
 		BANDIT_TYPE_NPC = list(
 			/obj/item/gun/ballistic/automatic/vampire/deagle = 33,
@@ -25,6 +27,7 @@
 			/obj/item/gun/ballistic/automatic/vampire/ar15 = 100,
 		)
 	)
+	*/
 	var/datum/socialrole/socialrole
 
 	var/is_talking = FALSE
@@ -48,8 +51,8 @@
 
 	var/stopturf = 1
 
-	var/extra_mags=2
-	var/extra_loaded_rounds=10
+	var/extra_mags = 2
+	var/extra_loaded_rounds = 10
 
 	var/has_weapon = FALSE
 
@@ -83,16 +86,26 @@
 	GLOB.npc_list += src
 	GLOB.alive_npc_list += src
 
+	// Annoy the NPC when pushed around
+	RegisterSignal(src, COMSIG_LIVING_MOB_BUMPED, PROC_REF(handle_bumped))
+	// Aggro the NPC when shoved
+	RegisterSignal(src, COMSIG_LIVING_DISARM_HIT, PROC_REF(handle_shoved))
+	// Be annoyed if helped
+	RegisterSignal(src, COMSIG_CARBON_HELP_ACT, PROC_REF(handle_helped))
+	// Aggro if shot or hit by any projectile
+	RegisterSignal(src, COMSIG_PROJECTILE_ON_HIT, PROC_REF(handle_projectile_hit))
+
 	return INITIALIZE_HINT_LATELOAD
 
 /mob/living/carbon/human/npc/LateInitialize(mapload)
-	. = ..()
-
+	// TODO: [Lucia] reimplement weapons
+	/*
 	if (role_weapons_chances.Find(type))
 		for(var/weapon in role_weapons_chances[type])
 			if(prob(role_weapons_chances[type][weapon]))
 				my_weapon = new weapon(src)
 				break
+	*/
 
 	if (!my_weapon && my_weapon_type)
 		my_weapon = new my_weapon_type(src)
@@ -144,7 +157,7 @@
 //============================================================
 
 /mob/living/carbon/human/npc/proc/realistic_say(message)
-	GLOB.move_manager.stop_looping(src, SShumannpcpool)
+	GLOB.move_manager.stop_looping(src)
 
 	if (!message)
 		return
@@ -157,9 +170,6 @@
 	addtimer(CALLBACK(src, PROC_REF(start_talking), message), 0.5 SECONDS)
 
 /mob/living/carbon/human/npc/proc/start_talking(message)
-	if (is_talking)
-		return
-
 	create_typing_indicator()
 	var/typing_delay = round(length_char(message) * 0.5)
 	addtimer(CALLBACK(src, PROC_REF(finish_talking), message), max(0.1 SECONDS, typing_delay))
@@ -170,7 +180,7 @@
 	is_talking = FALSE
 
 /mob/living/carbon/human/npc/proc/Annoy(atom/source)
-	GLOB.move_manager.stop_looping(src, SShumannpcpool)
+	GLOB.move_manager.stop_looping(src)
 
 	if (!can_npc_move())
 		return
@@ -194,64 +204,77 @@
 			phrase = pick(socialrole.female_phrases)
 	realistic_say(phrase)
 
-/mob/living/carbon/human/Bump(atom/Obstacle)
-	. = ..()
-	var/mob/living/carbon/human/npc/NPC = locate() in get_turf(Obstacle)
-	if(NPC)
-		if(a_intent != INTENT_HELP)
-			NPC.Annoy(src)
+/mob/living/carbon/human/npc/proc/handle_bumped(mob/living/carbon/human/npc/source, mob/living/bumping)
+	SIGNAL_HANDLER
+
+	if (bumping.can_mobswap_with(source))
+		return
+
+	source.Annoy(bumping)
 
 /mob/living/carbon/Move(NewLoc, direct)
 	if (ishuman(src))
 		var/mob/living/carbon/human/H = src
 		H.update_shadow()
 
+	// TODO: [Lucia] reimplement walls
+	/*
 	if (HAS_TRAIT(src, TRAIT_RUBICON))
 		if(istype(NewLoc, /turf/open/floor/plating/shit))
 			return
+	*/
 
 	. = ..()
 
 /mob/living/carbon/human/npc/Move(NewLoc, direct)
 	if (!can_npc_move())
-		GLOB.move_manager.stop_looping(src, SShumannpcpool)
+		GLOB.move_manager.stop_looping(src)
+
 	var/getaway = stopturf + 1
+
 	if (!old_movement)
 		getaway = 2
+
 	if (get_dist(src, walktarget) <= getaway)
-		GLOB.move_manager.stop_looping(src, SShumannpcpool)
+		GLOB.move_manager.stop_looping(src)
 		walktarget = null
 
 	. = ..()
 
-// TODO: [Lucia] split this into registered signals
 /mob/living/carbon/human/npc/attack_hand(mob/user, list/modifiers)
 	if (!isliving(user))
 		return
 	var/mob/living/hit_by = user
 
-	if (hit_by.combat_mode == FALSE)
-		Annoy(user)
-	else
-		for(var/mob/living/carbon/human/npc/NEPIC in oviewers(7, src))
+	if (hit_by.combat_mode)
+		for (var/mob/living/carbon/human/npc/NEPIC in oviewers(7, src))
 			NEPIC.Aggro(user)
 		Aggro(user, TRUE)
 
-	if (hit_by.combat_mode == INTENT_DISARM)
-		Aggro(user, TRUE)
-
 	. = ..()
 
-/mob/living/carbon/human/npc/on_hit(obj/projectile/P)
-	. = ..()
+/mob/living/carbon/human/npc/proc/handle_helped(mob/living/carbon/human/npc/source, mob/living/helper)
+	SIGNAL_HANDLER
 
-	if (!P?.firer)
+	source.Annoy(helper)
+
+/mob/living/carbon/human/npc/proc/handle_shoved(mob/living/carbon/human/npc/source, mob/living/attacker, zone_targeted, obj/item/weapon)
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(source, PROC_REF(Aggro), attacker, TRUE)
+
+/mob/living/carbon/human/npc/proc/handle_projectile_hit(mob/living/carbon/human/npc/source, atom/movable/firer, atom/target, angle, hit_limb, blocked, pierce_hit)
+	SIGNAL_HANDLER
+
+	if (!isliving(firer))
 		return
 
 	for (var/mob/living/carbon/human/npc/NEPIC in oviewers(7, src))
-		NEPIC.Aggro(P.firer)
+		INVOKE_ASYNC(NEPIC, PROC_REF(Aggro), firer)
+	INVOKE_ASYNC(src, PROC_REF(Aggro), firer, TRUE)
 
-	Aggro(P.firer, TRUE)
+	// TODO: [Lucia] reimplement P25 radios and crime stuff
+	/*
 	var/witness_count
 
 	for (var/mob/living/carbon/human/npc/NEPIC in viewers(7, usr))
@@ -264,6 +287,7 @@
 				if (radio.p25_network == "police")
 					radio.announce_crime("victim", get_turf(src))
 					break
+	*/
 
 /mob/living/carbon/human/npc/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	. = ..()
@@ -272,6 +296,7 @@
 
 /mob/living/carbon/human/npc/attackby(obj/item/W, mob/living/user, params)
 	. = ..()
+
 	if (!user)
 		return
 	if (!W.force || ((W.force <= 5) && (health >= maxHealth)))

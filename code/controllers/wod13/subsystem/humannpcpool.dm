@@ -38,10 +38,10 @@ SUBSYSTEM_DEF(humannpcpool)
 	while (length(GLOB.alive_npc_list) < npc_max)
 		var/atom/chosen_spawn_point = pick(GLOB.npc_spawn_points)
 		var/creating_npc = pick(
-			/mob/living/carbon/human/npc/police,
-			/mob/living/carbon/human/npc/bandit,
-			/mob/living/carbon/human/npc/hobo,
-			/mob/living/carbon/human/npc/walkby,
-			/mob/living/carbon/human/npc/business
+			/mob/living/carbon/human/npc/police, \
+			/mob/living/carbon/human/npc/bandit, \
+			/mob/living/carbon/human/npc/hobo, \
+			/mob/living/carbon/human/npc/walkby, \
+			/mob/living/carbon/human/npc/business \
 		)
 		new creating_npc(get_turf(chosen_spawn_point))

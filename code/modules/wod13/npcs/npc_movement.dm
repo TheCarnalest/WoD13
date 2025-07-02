@@ -43,10 +43,9 @@
 /mob/living/carbon/human/npc/death()
 	GLOB.alive_npc_list -= src
 	SShumannpcpool.npclost()
-	GLOB.move_manager.stop_looping(src, SShumannpcpool)
+	GLOB.move_manager.stop_looping(src)
 
 	if (!last_attacker || (get_dist(src, last_attacker) >= 10) || key || hostile)
-		remove_overlay(FIGHT_LAYER)
 		return ..()
 
 	if (istype(last_attacker, /mob/living/simple_animal/hostile))
@@ -77,8 +76,6 @@
 				SEND_SOUND(HM, sound('sound/wod13/sus.ogg', 0, 0, 75))
 				to_chat(HM, span_userdanger("<b>SUSPICIOUS ACTION (murder)</b>"))
 
-	remove_overlay(FIGHT_LAYER)
-
 	. = ..()
 
 /mob/living/carbon/human/npc/Life()
@@ -99,7 +96,7 @@
 	if (get_dist(danger_source, src) < 7)
 		last_antagonised = world.time
 	if (fire_stacks >= 1)
-		INVOKE_ASYNC(src, PROC_REF(resist))
+		INVOKE_ASYNC(src, PROC_REF(execute_resist))
 
 	if (staying)
 		return
@@ -130,8 +127,11 @@
 		if(iswallturf(location))
 			return location
 		for(var/atom/A in location)
+			// TODO: [Lucia] reimplement decor
+			/*
 			if(A.density && !istype(A, /obj/structure/lamppost))
 				return location
+			*/
 			if(istype(A, /obj/effect/landmark/npcwall))
 				return get_step_towards(location, get_turf(src))
 			if(istype(A, /obj/effect/landmark/npcbeacon) && prob(50))
@@ -228,7 +228,7 @@
 		if (HAS_TRAIT(pulledby, TRAIT_CHARMER))
 			return FALSE
 		if (prob(30))
-			resist()
+			execute_resist()
 		return FALSE
 
 	return TRUE
@@ -257,33 +257,39 @@
 		return
 
 	// Checks for fire, clearing the stored fire if none is in view
+	// TODO: [Lucia] reimplement fire
+	/*
 	var/seeing_fire
 	for (var/obj/effect/fire/seen_fire in view(7, src))
 		afraid_of_fire = seen_fire
 		seeing_fire = TRUE
 	if (!seeing_fire)
 		afraid_of_fire = null
+	*/
 
 	// Combat behaviour
 	if (danger_source)
 		// Run away from the danger source if they aren't aggressive and have no weapon
 		if (!has_weapon && !aggressive)
-			GLOB.move_manager.move_away(src, danger_source, 10, cached_multiplicative_slowdown, subsystem = SShumannpcpool)
+			GLOB.move_manager.move_away(src, danger_source, 10, cached_multiplicative_slowdown)
 		else
 			// Criminals will attack anyone, others will only attack non-police
+			// TODO: [Lucia] reimplement IDs
+			/*
 			var/obj/item/card/id/id_card = danger_source.get_idcard(FALSE)
 			if (!istype(id_card, /obj/item/card/id/police) || is_criminal)
-				if(!spawned_weapon && has_weapon)
-					npc_draw_weapon()
-				if(spawned_weapon && get_active_held_item() != my_weapon)
-					has_weapon = FALSE
-				if(danger_source)
-					if(danger_source == src)
-						danger_source = null
-					else
-						ClickOn(danger_source)
-						face_atom(danger_source)
-						GLOB.move_manager.move_to(src, danger_source, 1, cached_multiplicative_slowdown, subsystem = SShumannpcpool)
+			*/
+			if(!spawned_weapon && has_weapon)
+				npc_draw_weapon()
+			if(spawned_weapon && get_active_held_item() != my_weapon)
+				has_weapon = FALSE
+			if(danger_source)
+				if(danger_source == src)
+					danger_source = null
+				else
+					ClickOn(danger_source)
+					face_atom(danger_source)
+					GLOB.move_manager.move_to(src, danger_source, 1, cached_multiplicative_slowdown)
 
 		// Deaggro if the danger source has been beaten up
 		if (danger_source.stat > UNCONSCIOUS)
@@ -294,16 +300,19 @@
 			end_combat()
 
 	// Running away from fire behaviour
+	// TODO: [Lucia] reimplement fire
+	/*
 	else if (afraid_of_fire)
-		GLOB.move_manager.move_away(src, afraid_of_fire, 10, cached_multiplicative_slowdown, subsystem = SShumannpcpool)
+		GLOB.move_manager.move_away(src, afraid_of_fire, 10, cached_multiplicative_slowdown)
 		if (prob(25))
 			emote("scream")
+	*/
 
 	// Walking around behaviour
 	else if (walktarget && !staying)
 		if (prob(25))
 			toggle_move_intent(src)
-		GLOB.move_manager.move_to(src, walktarget, 0, cached_multiplicative_slowdown, subsystem = SShumannpcpool)
+		GLOB.move_manager.move_to(src, walktarget, 0, cached_multiplicative_slowdown)
 
 	if (!has_weapon || danger_source || !spawned_weapon)
 		return

@@ -2,7 +2,7 @@
 	if (stat == DEAD)
 		return
 	if (attacked && danger_source != victim)
-		GLOB.move_manager.stop_looping(src, SShumannpcpool)
+		GLOB.move_manager.stop_looping(src)
 	if (victim == src)
 		return
 	if (isnpc(victim))
@@ -68,7 +68,7 @@
 
 	if(!weapon.magazine.ammo_count() && extra_mags)
 		extra_mags--
-		weapon.eject_magazine_npc(src, new weapon.mag_type(src))
+		weapon.eject_magazine_npc(src, new weapon.spawn_magazine_type(src))
 		weapon.rack(src)
 		if(!weapon.chambered)
 			weapon.chamber_round()
@@ -120,3 +120,25 @@
 	put_in_active_hand(my_backup_weapon)
 	ADD_TRAIT(my_backup_weapon, TRAIT_NODROP, NPC_ITEM_TRAIT)
 	spawned_weapon = TRUE
+
+/obj/item/gun/ballistic/proc/eject_magazine_npc(mob/user, obj/item/ammo_box/magazine/tac_load = null)
+	if(bolt_type == BOLT_TYPE_OPEN)
+		chambered = null
+	if (magazine.ammo_count())
+		playsound(src, load_sound, load_sound_volume, load_sound_vary)
+	else
+		playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
+	magazine.forceMove(drop_location())
+	var/obj/item/ammo_box/magazine/old_mag = magazine
+
+	if (tac_load)
+		tac_load.forceMove(src)
+		if (bolt_type == BOLT_TYPE_OPEN && !bolt_locked)
+			chamber_round(TRUE)
+		magazine = tac_load
+	else
+		magazine = null
+
+	old_mag.forceMove(get_turf(user))
+	old_mag.update_icon()
+	update_icon()

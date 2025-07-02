@@ -80,7 +80,8 @@
 	)
 	uniforms = list(/obj/item/clothing/under/vampire/mechanic)
 	pockets = list(
-		/obj/item/vamp/keys/npc,
+		// TODO: [Lucia] reimplement doors
+		// /obj/item/vamp/keys/npc,
 		/obj/item/stack/dollar/rand
 	)
 
