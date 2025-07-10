@@ -316,6 +316,7 @@
 					if(!H.CheckFrenzyMove())
 						H.AdjustHumanity(1, 10)
 */
+*/
 
 /obj/item/organ/tongue/kindred
 	liked_foodtypes = NONE
@@ -349,4 +350,3 @@
 			return "vamp11"
 		else
 			return value
-*/
