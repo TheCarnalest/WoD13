@@ -41,6 +41,7 @@
 	var/enlightenment
 	COOLDOWN_DECLARE(torpor_timer)
 
+/*
 /datum/species/human/kindred/on_species_gain(mob/living/carbon/human/new_kindred, datum/species/old_species, pref_load, regenerate_icons = TRUE)
 	. = ..()
 
@@ -348,3 +349,4 @@
 			return "vamp11"
 		else
 			return value
+*/
