@@ -1,5 +1,4 @@
 /mob/living/carbon/human/proc/adjust_masquerade(value, forced)
-	/*
 	if (!iskindred(src) && !isghoul(src) && !iscathayan(src))
 		return
 	var/datum/species/human/kindred/vampirism = dna.species
@@ -43,4 +42,3 @@
 			GLOB.masquerade_breakers_list -= src
 	else if (masquerade < 3)
 		GLOB.masquerade_breakers_list |= src
-	*/

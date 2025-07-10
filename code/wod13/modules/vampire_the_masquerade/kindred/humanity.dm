@@ -1,5 +1,4 @@
 /mob/living/proc/AdjustHumanity(value, limit, forced)
-	/*
 	// Only vampires have a "working" morality system currently
 	if (!iskindred(src))
 		return
@@ -68,5 +67,3 @@
 				to_chat(src, span_warning("As you fall from your perfect [path], you feel the Beast [is_enlightenment ? "taking power over" : "reawakening in"] a dark corner of your soul."))
 
 	SEND_SIGNAL(src, COMSIG_LIVING_CHANGED_HUMANITY, humanity_change)
-
-	*/
