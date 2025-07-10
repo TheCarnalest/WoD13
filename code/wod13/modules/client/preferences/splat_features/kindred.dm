@@ -33,6 +33,7 @@
 	return list("Humanity", "Enlightenment")
 
 /datum/preference/choiced/vtm_morality/apply_to_human(mob/living/carbon/human/target, value)
+	/*
 	if (!iskindred(target))
 		return
 	if (value != "Enlightenment")
@@ -40,3 +41,4 @@
 
 	var/datum/species/human/kindred/kindred_species = target.dna.species
 	kindred_species.enlightenment = TRUE
+	*/

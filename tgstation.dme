@@ -6765,7 +6765,6 @@
 #include "code\wod13\modules\vampire_the_masquerade\blood_power.dm"
 #include "code\wod13\modules\vampire_the_masquerade\disciplines.dm"
 #include "code\wod13\modules\vampire_the_masquerade\kindred\humanity.dm"
-#include "code\wod13\modules\vampire_the_masquerade\kindred\kindred_species.dm"
 #include "code\wod13\modules\vampire_the_masquerade\kindred\torpor.dm"
 #include "code\wod13\modules\vampire_the_masquerade\kindred\vampire_clan\__vampire_clan.dm"
 #include "code\wod13\modules\vampire_the_masquerade\kindred\vampire_clan\baali.dm"

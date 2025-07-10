@@ -1,4 +1,5 @@
 /mob/living/proc/torpor(source)
+	/*
 	if (HAS_TRAIT(src, TRAIT_TORPOR))
 		return
 
@@ -41,6 +42,7 @@
 		var/torpor_length = 1 MINUTES * max_yin_chi
 		COOLDOWN_START(dharma, torpor_timer, torpor_length)
 	*/
+	*/
 
 /mob/living/proc/cure_torpor(source)
 	if (!HAS_TRAIT(src, TRAIT_TORPOR))
@@ -54,8 +56,10 @@
 	cure_fakedeath(source)
 	clear_alert(ALERT_UNTORPOR)
 	REMOVE_TRAIT(src, TRAIT_TORPOR, source)
+	/*
 	if (iskindred(src))
 		to_chat(src, span_notice("You have awoken from your Torpor."))
+	*/
 	// TODO: [Lucia] implement kuei-jin
 	/*
 	if(iscathayan(src))
@@ -66,6 +70,7 @@
 	if (!HAS_TRAIT(src, TRAIT_TORPOR))
 		return
 
+	/*
 	if (iskindred(src))
 		if (bloodpool > 0)
 			bloodpool -= 1
@@ -73,6 +78,7 @@
 			to_chat(src, span_notice("You have awoken from your Torpor."))
 		else
 			to_chat(src, span_warning("You have no blood to re-awaken with..."))
+	*/
 	// TODO: [Lucia] implement kuei-jin
 	/*
 	if (iscathayan(src))
@@ -107,6 +113,7 @@
 		to_chat(living_owner, span_warning("You have suffered Final Death. You will not wake up."))
 		return
 
+	/*
 	if (iskindred(living_owner))
 		var/mob/living/carbon/human/vampire = living_owner
 		var/datum/species/human/kindred/kindred_species = vampire.dna.species
@@ -119,6 +126,7 @@
 				to_chat(owner, span_purple("<i>The time to re-awaken depends on your [(vampire.humanity > 5) ? "high" : "low"] [kindred_species.enlightenment ? "Enlightenment" : "Humanity"] rating of [vampire.humanity].</i>"))
 			else
 				to_chat(owner, span_danger("<i>You will not be able to re-awaken, because you have no blood available to do so.</i>"))
+	*/
 	// TODO: [Lucia] implement kuei-jin
 	/*
 	if(iscathayan(living_owner))

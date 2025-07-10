@@ -61,11 +61,13 @@
  * * discipline - Discipline datum that is being given to this mob.
  */
 /mob/living/carbon/human/proc/give_discipline(datum/discipline/discipline)
+	/*
 	if (discipline.level > 0)
 		var/datum/action/discipline/action = new(discipline)
 		action.Grant(src)
 	var/datum/species/human/kindred/species = dna.species
 	species.disciplines += discipline
+	*/
 
 // TODO: [Lucia] reimplement kuei-jin
 /*
@@ -96,8 +98,10 @@
 	if (isghoul(vampire_checking))
 		return TRUE
 	*/
+	/*
 	if (!iskindred(vampire_checking))
 		return FALSE
+	*/
 	if (!vampire_checking.client)
 		return FALSE
 
