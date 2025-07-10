@@ -106,6 +106,7 @@
 	for (var/datum/action/A in human.actions)
 		if (A.vampiric)
 			A.Remove(human)
+*/
 
 /datum/species/human/kindred/proc/damage_resistance(datum/source, list/damage_mods, damage_amount, damagetype, def_zone, sharpness, attack_direction, obj/item/attacking_item)
 	SIGNAL_HANDLER
@@ -124,9 +125,6 @@
 	for (var/datum/discipline/discipline in disciplines)
 		if (istype(discipline, searched_discipline))
 			return discipline
-
-/datum/species/human/kindred/check_roundstart_eligible()
-	return TRUE
 
 /**
  * Signal handler for lose_organ to near-instantly kill Kindred whose hearts have been removed.
@@ -315,7 +313,6 @@
 				if (H.client?.prefs?.enlightenment)
 					if(!H.CheckFrenzyMove())
 						H.AdjustHumanity(1, 10)
-*/
 */
 
 /obj/item/organ/tongue/kindred
