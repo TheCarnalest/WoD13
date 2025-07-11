@@ -90,6 +90,17 @@
 		post_gain()
 	post_gain_applied = TRUE
 
+	// Destroy self and contained powers when owner is destroyed
+	RegisterSignal(owner, COMSIG_QDELETING, PROC_REF(on_owner_destroy))
+
+/datum/discipline/proc/on_owner_destroy(mob/living/source, force)
+	// Clear out Discipline powers
+	current_power = null
+	QDEL_LIST(known_powers)
+
+	// Destroy self when owner is destroyed
+	qdel(src)
+
 /**
  * Returns a known Discipline power in this Discipline
  * searching by type.
