@@ -41,7 +41,6 @@
 	var/enlightenment
 	COOLDOWN_DECLARE(torpor_timer)
 
-/*
 /datum/species/human/kindred/on_species_gain(mob/living/carbon/human/new_kindred, datum/species/old_species, pref_load, regenerate_icons = TRUE)
 	. = ..()
 
@@ -73,7 +72,7 @@
 	new_kindred.max_yin_chi = 6
 
 	//vampires die instantly upon having their heart removed
-	RegisterSignal(new_kindred, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(handle_lose_organ))
+	//RegisterSignal(new_kindred, COMSIG_CARBON_LOSE_ORGAN, PROC_REF(handle_lose_organ))
 
 	//vampires don't die while in crit, they just slip into torpor after 2 minutes of being critted
 	RegisterSignal(new_kindred, SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION), PROC_REF(handle_enter_critical_condition))
@@ -92,7 +91,7 @@
 
 	human.set_clan()
 
-	UnregisterSignal(human, COMSIG_CARBON_LOSE_ORGAN)
+	//UnregisterSignal(human, COMSIG_CARBON_LOSE_ORGAN)
 	UnregisterSignal(human, SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION))
 	UnregisterSignal(human, COMSIG_MOB_VAMPIRE_SUCKED)
 	UnregisterSignal(human, COMSIG_MOB_APPLY_DAMAGE_MODIFIERS)
@@ -106,7 +105,6 @@
 	for (var/datum/action/A in human.actions)
 		if (A.vampiric)
 			A.Remove(human)
-*/
 
 /datum/species/human/kindred/proc/damage_resistance(datum/source, list/damage_mods, damage_amount, damagetype, def_zone, sharpness, attack_direction, obj/item/attacking_item)
 	SIGNAL_HANDLER
