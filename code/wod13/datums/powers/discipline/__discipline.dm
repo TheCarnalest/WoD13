@@ -100,6 +100,7 @@
 
 	// Destroy self when owner is destroyed
 	qdel(src)
+	owner = null
 
 /**
  * Returns a known Discipline power in this Discipline
